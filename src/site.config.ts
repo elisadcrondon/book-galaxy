@@ -154,7 +154,7 @@ const siteConfig: SiteConfig = {
     },
     about: {
         title: 'Sobre',
-        text: 'Oi! Sou a Elisa, tenho 11 anos e gosto muito de livros, RPG e escrever. Criei o Book Galaxy pra compartilhar minhas resenhas e também guardar uma memória dos livros que vou lendo — assim não esqueço o que achei de cada um. 📚💛',
+        text: 'Oi! Sou a Elisa, tenho 11 anos e gosto muito de livros, RPG e escrever. Criei o Book Galaxy pra compartilhar minhas resenhas e também guardar uma memória dos livros que vou lendo, assim não esqueço o que achei de cada um. 📚💛',
     },
     contactInfo: {
         title: 'Contact',
