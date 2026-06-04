@@ -187,8 +187,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4061ad19a7c742ff",
+  "active": "54e3e8759d3449e4",
   "lastOpenFiles": [
+    "newsletter/book-galaxy-retrospectiva-mensal.zip",
+    "newsletter/book-galaxy-retrospectiva-mensal.html",
+    "newsletter/book-galaxy-modelo-generico.zip",
+    "newsletter/book-galaxy-modelo-generico.html",
+    "newsletter",
     "videos/gatos-guerreiros-1-4.md",
     "mensais/2026-03.md",
     "mensais/2026-02.md",
@@ -216,7 +221,6 @@
     "resenhas/principe-dragao.md",
     "resenhas/coraline.md",
     "resenhas/a-escola-do-bem-e-do-mal-2.md",
-    "resenhas/a-escola-do-bem-e-do-mal.md",
-    "resenhas/nascida-do-fogo.md"
+    "resenhas/a-escola-do-bem-e-do-mal.md"
   ]
 }
