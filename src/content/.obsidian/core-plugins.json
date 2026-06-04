@@ -29,6 +29,6 @@
   "publish": false,
   "sync": true,
   "bases": true,
-  "starred": true,
-  "webviewer": false
+  "webviewer": false,
+  "starred": true
 }
