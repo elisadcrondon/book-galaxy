@@ -90,37 +90,26 @@ const { class: className } = Astro.props;
     if (!emailInput || !emailInput.value) return;
     if (submitButton) submitButton.disabled = true;
 
-    const callbackName = "ml_jsonp_" + Date.now();
     const params = new URLSearchParams({
       "fields[email]": emailInput.value,
       "ml-submit": "1",
       anticsrf: "true",
-      callback: callbackName,
     });
 
-    const script = document.createElement("script");
-    const cleanup = () => {
-      delete (window as any)[callbackName];
-      script.remove();
-      if (submitButton) submitButton.disabled = false;
-    };
-
-    (window as any)[callbackName] = (data: { success?: boolean }) => {
-      cleanup();
-      if (data && data.success) {
-        form.classList.add("hidden");
-        success?.classList.remove("hidden");
-      } else {
+    fetch(form.action + "?" + params.toString(), { method: "GET" })
+      .then((response) => response.json())
+      .then((data: { success?: boolean }) => {
+        if (data && data.success) {
+          form.classList.add("hidden");
+          success?.classList.remove("hidden");
+        } else {
+          error?.classList.remove("hidden");
+          if (submitButton) submitButton.disabled = false;
+        }
+      })
+      .catch(() => {
         error?.classList.remove("hidden");
-      }
-    };
-
-    script.onerror = () => {
-      cleanup();
-      error?.classList.remove("hidden");
-    };
-
-    script.src = form.action + "?" + params.toString();
-    document.body.appendChild(script);
+        if (submitButton) submitButton.disabled = false;
+      });
   });
 </script>
