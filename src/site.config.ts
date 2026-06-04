@@ -89,10 +89,6 @@ const siteConfig: SiteConfig = {
             href: withBase('/autores')
         },
         {
-            text: 'Coleções',
-            href: withBase('/colecoes')
-        },
-        {
             text: 'Mensais',
             href: withBase('/mensais')
         },
@@ -109,6 +105,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'Estilos',
             href: withBase('/estilos')
+        },
+        {
+            text: 'Coleções',
+            href: withBase('/colecoes')
         },
         {
             text: 'RSS Feed',
