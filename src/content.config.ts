@@ -100,10 +100,30 @@ const mensais = defineCollection({
         // data de publicação do post (geralmente o início do mês seguinte)
         pubDate: z.date(),
         // título opcional; se vazio, usamos "Mês de Ano"
-        titulo: z.string().optional(),
+        titulo: z.string().nullish(),
         // livros lidos no mês (referências aos arquivos em /livros)
         livros: z.array(reference("livros")).default([]),
         draft: z.boolean().optional(),
+    }),
+});
+
+// ---------------------------------------------------------------------------
+// VÍDEOS — entrevistas e outros vídeos do YouTube.
+// Um arquivo por vídeo. O texto (opcional) fica no corpo do markdown.
+// ---------------------------------------------------------------------------
+const videos = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/videos" }),
+    schema: z.object({
+        titulo: z.string(),
+        // link ou ID do vídeo no YouTube (ex: "https://youtu.be/abc123" ou "abc123")
+        youtube: z.string(),
+        // data de publicação (opcional; usada para ordenar)
+        pubDate: z.date().nullish(),
+        // miniatura própria em /public (opcional). Se vazio, usamos a do YouTube.
+        thumb: z.string().nullish(),
+        // descrição curta opcional, mostrada na listagem
+        descricao: z.string().nullish(),
+        draft: z.boolean().nullish(),
     }),
 });
 
@@ -114,4 +134,5 @@ export const collections = {
     estilos,
     colecoes,
     mensais,
+    videos,
 };

@@ -7,6 +7,7 @@ Bem-vinda! Aqui você escreve suas resenhas de livros. Cada coisa fica numa past
 - **autores/** → quem escreveu os livros
 - **estilos/** → o tipo do livro (fantasia, aventura, fábula...)
 - **colecoes/** → séries com vários livros (Harry Potter, Nárnia...)
+- **videos/** → entrevistas e outros vídeos do YouTube
 
 Tudo é em **Markdown** e pode ser editado aqui no Obsidian. 💛
 
@@ -83,6 +84,30 @@ ordemNaColecao: 1
 ```
 
 O número diz se é o 1º, 2º, 3º livro da série. A página da coleção mostra todos em ordem.
+
+---
+
+## Vídeos (entrevistas)
+
+Cada vídeo é um arquivo dentro de `videos/`. O vídeo precisa estar no **YouTube** —
+você só cola o link. A miniatura aparece sozinha (vem do próprio YouTube).
+
+```
+---
+titulo: Entrevista com a autora Fulana
+youtube: https://youtu.be/ID_DO_VIDEO
+pubDate: 2026-06-10
+descricao: Uma frase curtinha sobre o vídeo.
+draft: false
+---
+
+Texto opcional sobre o vídeo (quem é, sobre o que é...).
+```
+
+- O `youtube` pode ser o link inteiro (`https://youtu.be/...` ou `youtube.com/watch?v=...`) ou só o ID.
+- `descricao` e o texto embaixo são **opcionais**.
+- Quer uma capa diferente da do YouTube? Coloque a imagem em `public/videos/` e escreva `thumb: /videos/minha-capa.jpg`.
+- Modelo pronto em `_templates/Video.md`.
 
 ---
 

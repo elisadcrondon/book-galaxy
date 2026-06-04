@@ -89,22 +89,26 @@ const siteConfig: SiteConfig = {
             href: withBase('/autores')
         },
         {
-            text: 'Estilos',
-            href: withBase('/estilos')
-        },
-        {
             text: 'Coleções',
             href: withBase('/colecoes')
         },
         {
-            text: 'Sobre',
-            href: withBase('/about')
+            text: 'Mensais',
+            href: withBase('/mensais')
+        },
+        {
+            text: 'Vídeos',
+            href: withBase('/videos')
         }
     ],
     footerNavLinks: [
         {
             text: 'Sobre',
             href: withBase('/about')
+        },
+        {
+            text: 'Estilos',
+            href: withBase('/estilos')
         },
         {
             text: 'RSS Feed',

@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import { sortVideosDesc, withBase, youtubeThumb } from "../../utils/helpers";
+
+const isProd = import.meta.env.PROD;
+const videos = (
+  await getCollection("videos", ({ data }) => !(isProd && data.draft))
+).sort(sortVideosDesc);
+---
+
+<MainLayout activePage="vídeos" pageTitle={siteConfig.title + " | Vídeos"}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">Vídeos</h1>
+    <p class="kanit-regular text-center mb-8 text-balance">
+      Entrevistas e outros vídeos. 🎬
+    </p>
+    {
+      videos.length === 0 ? (
+        <p class="font-light text-center">Nenhum vídeo publicado ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {videos.map((video) => {
+            const thumb = video.data.thumb
+              ? withBase(video.data.thumb)
+              : youtubeThumb(video.data.youtube);
+            return (
+              <a
+                href={withBase("/videos/" + video.id)}
+                class="group block rounded-2xl overflow-hidden shadow-md bg-gradient-to-br from-space-red/10 to-space-yellow/10 hover:shadow-lg transition-shadow"
+              >
+                <div class="relative aspect-video overflow-hidden">
+                  <img
+                    src={thumb}
+                    alt={video.data.titulo}
+                    loading="lazy"
+                    class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  />
+                  <span class="absolute inset-0 flex items-center justify-center">
+                    <span class="flex items-center justify-center w-14 h-14 rounded-full bg-black/60 text-white text-2xl">
+                      ▶
+                    </span>
+                  </span>
+                </div>
+                <div class="p-4">
+                  <h2 class="kanit-bold text-lg group-hover:underline">
+                    {video.data.titulo}
+                  </h2>
+                  {video.data.descricao && (
+                    <p class="kanit-regular text-sm opacity-70 mt-1 text-balance">
+                      {video.data.descricao}
+                    </p>
+                  )}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      )
+    }
+  </div>
+</MainLayout>

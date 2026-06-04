@@ -1,0 +1,65 @@
+---
+import { getCollection, getEntries } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import Capa from "../../components/Capa.astro";
+import { mesPorExtenso, sortMensaisDesc, withBase } from "../../utils/helpers";
+
+const isProd = import.meta.env.PROD;
+const mensais = (
+  await getCollection("mensais", ({ data }) => !(isProd && data.draft))
+).sort(sortMensaisDesc);
+
+// Pré-carrega os livros de cada mês para mostrar miniaturas das capas
+const meses = await Promise.all(
+  mensais.map(async (mensal) => ({
+    mensal,
+    livros: await getEntries(mensal.data.livros),
+  })),
+);
+---
+
+<MainLayout activePage="mensais" pageTitle={siteConfig.title + " | Mensais"}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">Mensais</h1>
+    <p class="kanit-regular text-center mb-8 text-balance">
+      Os livros que li em cada mês, com um comentário de cada um. 🗓️📚
+    </p>
+    {
+      meses.length === 0 ? (
+        <p class="font-light text-center">Nenhum mês publicado ainda.</p>
+      ) : (
+        <div class="flex flex-col gap-8">
+          {meses.map(({ mensal, livros }) => {
+            const titulo =
+              mensal.data.titulo ||
+              `${mesPorExtenso(mensal.data.mes)} de ${mensal.data.ano}`;
+            return (
+              <a
+                href={withBase("/mensais/" + mensal.id)}
+                class="group block rounded-2xl p-5 shadow-md bg-gradient-to-br from-space-red/10 to-space-yellow/10 hover:shadow-lg transition-shadow"
+              >
+                <h2 class="kanit-bold text-xl group-hover:underline">{titulo}</h2>
+                <p class="kanit-regular text-sm opacity-70 mb-3">
+                  {livros.length === 1
+                    ? "1 livro"
+                    : `${livros.length} livros`}
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  {livros.map((livro) => (
+                    <Capa
+                      capa={livro.data.capa}
+                      titulo={livro.data.titulo}
+                      width={70}
+                      height={105}
+                    />
+                  ))}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      )
+    }
+  </div>
+</MainLayout>
