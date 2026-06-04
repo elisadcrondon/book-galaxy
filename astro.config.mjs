@@ -7,8 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321", //"https://djsiddz.github.io",
-  base: "/book-galaxy",
+  site: "https://book-galaxy.com",
   integrations: [
     swup({
       theme: ["overlay", { direction: "to-top" }],
