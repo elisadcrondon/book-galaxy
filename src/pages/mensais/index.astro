@@ -17,6 +17,14 @@ const meses = await Promise.all(
     livros: await getEntries(mensal.data.livros),
   })),
 );
+
+// Agrupa os meses por ano (do ano mais novo para o mais antigo)
+const anos = [...new Set(meses.map((m) => m.mensal.data.ano))]
+  .sort((a, b) => b - a)
+  .map((ano) => ({
+    ano,
+    meses: meses.filter((m) => m.mensal.data.ano === ano),
+  }));
 ---
 
 <MainLayout activePage="mensais" pageTitle={siteConfig.title + " | Mensais"}>
@@ -29,35 +37,45 @@ const meses = await Promise.all(
       meses.length === 0 ? (
         <p class="font-light text-center">Nenhum mês publicado ainda.</p>
       ) : (
-        <div class="flex flex-col gap-8">
-          {meses.map(({ mensal, livros }) => {
-            const titulo =
-              mensal.data.titulo ||
-              `${mesPorExtenso(mensal.data.mes)} de ${mensal.data.ano}`;
-            return (
-              <a
-                href={withBase("/mensais/" + mensal.id)}
-                class="group block rounded-2xl p-5 shadow-md bg-gradient-to-br from-space-red/10 to-space-yellow/10 hover:shadow-lg transition-shadow"
-              >
-                <h2 class="kanit-bold text-xl group-hover:underline">{titulo}</h2>
-                <p class="kanit-regular text-sm opacity-70 mb-3">
-                  {livros.length === 1
-                    ? "1 livro"
-                    : `${livros.length} livros`}
-                </p>
-                <div class="flex flex-wrap gap-3">
-                  {livros.map((livro) => (
-                    <Capa
-                      capa={livro.data.capa}
-                      titulo={livro.data.titulo}
-                      width={70}
-                      height={105}
-                    />
-                  ))}
-                </div>
-              </a>
-            );
-          })}
+        <div class="flex flex-col gap-12">
+          {anos.map(({ ano, meses }) => (
+            <section>
+              <h2 class="sigmar-ff text-2xl border-b-2 border-space-red/30 dark:border-space-yellow/30 pb-2 mb-6">
+                {ano}
+              </h2>
+              <div class="flex flex-col gap-8">
+                {meses.map(({ mensal, livros }) => {
+                  const titulo =
+                    mensal.data.titulo || mesPorExtenso(mensal.data.mes);
+                  return (
+                    <a
+                      href={withBase("/mensais/" + mensal.id)}
+                      class="group block rounded-2xl p-5 shadow-md bg-gradient-to-br from-space-red/10 to-space-yellow/10 hover:shadow-lg transition-shadow"
+                    >
+                      <h3 class="kanit-bold text-xl group-hover:underline">
+                        {titulo}
+                      </h3>
+                      <p class="kanit-regular text-sm opacity-70 mb-3">
+                        {livros.length === 1
+                          ? "1 livro"
+                          : `${livros.length} livros`}
+                      </p>
+                      <div class="flex flex-wrap gap-3">
+                        {livros.map((livro) => (
+                          <Capa
+                            capa={livro.data.capa}
+                            titulo={livro.data.titulo}
+                            width={70}
+                            height={105}
+                          />
+                        ))}
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       )
     }
