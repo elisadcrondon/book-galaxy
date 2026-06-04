@@ -154,7 +154,7 @@ const siteConfig: SiteConfig = {
     },
     about: {
         title: 'Sobre',
-        text: 'O Book Galaxy é escrito e mantido pela Elisa, uma menina de 11 anos que adora ler. Aqui ela compartilha as resenhas dos livros que lê, seus autores favoritos e as coleções que está acompanhando. 📚💛',
+        text: 'Oi! Sou a Elisa, tenho 11 anos e gosto muito de livros, RPG e escrever. Criei o Book Galaxy pra compartilhar minhas resenhas e também guardar uma memória dos livros que vou lendo — assim não esqueço o que achei de cada um. 📚💛',
     },
     contactInfo: {
         title: 'Contact',
