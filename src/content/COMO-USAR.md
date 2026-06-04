@@ -1,4 +1,4 @@
-# Como usar este blog de livros 📚
+# Como usar este blog de livros 
 
 Bem-vinda! Aqui você escreve suas resenhas de livros. Cada coisa fica numa pasta:
 

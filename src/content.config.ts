@@ -86,10 +86,32 @@ const resenhas = defineCollection({
     }),
 });
 
+// ---------------------------------------------------------------------------
+// MENSAIS — retrospectiva dos livros lidos em cada mês.
+// Um arquivo por mês. O texto fica no corpo do markdown; o frontmatter só
+// lista os livros (referências a /livros) para montar a galeria de capas.
+// ---------------------------------------------------------------------------
+const mensais = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/mensais" }),
+    schema: z.object({
+        ano: z.number(),
+        // 1 = Janeiro ... 12 = Dezembro
+        mes: z.number().min(1).max(12),
+        // data de publicação do post (geralmente o início do mês seguinte)
+        pubDate: z.date(),
+        // título opcional; se vazio, usamos "Mês de Ano"
+        titulo: z.string().optional(),
+        // livros lidos no mês (referências aos arquivos em /livros)
+        livros: z.array(reference("livros")).default([]),
+        draft: z.boolean().optional(),
+    }),
+});
+
 export const collections = {
     resenhas,
     livros,
     autores,
     estilos,
     colecoes,
+    mensais,
 };
