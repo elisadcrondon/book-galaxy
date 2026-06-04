@@ -107,10 +107,6 @@ const siteConfig: SiteConfig = {
             href: withBase('/about')
         },
         {
-            text: 'Contato',
-            href: withBase('/contact')
-        },
-        {
             text: 'RSS Feed',
             href: withBase('/rss.xml')
         },
@@ -182,7 +178,7 @@ const siteConfig: SiteConfig = {
     subscribe: {
         title: 'Assine o Book Galaxy',
         text: 'Receba as novas resenhas no seu e-mail.',
-        formUrl: '#'
+        formUrl: 'https://assets.mailerlite.com/jsonp/2407821/forms/189376041774483040/subscribe'
     },
     blog: {
         description: "Todas as resenhas, da mais nova para a mais antiga."

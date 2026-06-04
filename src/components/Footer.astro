@@ -1,7 +1,6 @@
 ---
 import siteConfig from "../site.config";
 import SiteIdentity from "./SiteIdentity.astro";
-const currentYear = new Date().getFullYear();
 ---
 
 <footer class="kanit-light text-xs sm:text-sm">
@@ -32,17 +31,7 @@ const currentYear = new Date().getFullYear();
     class="footer-secondary flex flex-col sm:flex-row items-center justify-between gap-6 min-w-full"
   >
     <div class="flex flex-row gap-2 items-center justify-start text-balance">
-      <span>&copy; {currentYear}</span>
-      {siteConfig.title}. All rights reserved.
-    </div>
-    <div class="flex flex-row gap-4 items-center justify-end-safe">
-      {
-        siteConfig.socialLinks?.map((link) => (
-          <a href={link.href} title={link.text} target="_blank">
-            {link.text}
-          </a>
-        ))
-      }
+      Escrito por Elisa com carinho. 💛
     </div>
   </div>
   <div
