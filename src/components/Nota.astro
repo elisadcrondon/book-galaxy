@@ -1,0 +1,16 @@
+---
+import { notaEmEstrelas } from "../utils/helpers";
+type Props = { nota?: number; class?: string };
+const { nota, class: className } = Astro.props;
+---
+
+{
+  nota !== undefined && nota !== null && (
+    <span
+      class:list={["text-space-yellow whitespace-nowrap", className]}
+      title={`${nota} de 5`}
+    >
+      {notaEmEstrelas(nota)}
+    </span>
+  )
+}

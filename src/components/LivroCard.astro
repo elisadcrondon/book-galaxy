@@ -1,0 +1,53 @@
+---
+import { type CollectionEntry, getEntries } from "astro:content";
+import { withBase } from "../utils/helpers";
+import Capa from "./Capa.astro";
+import Pill from "./Pill.astro";
+
+type Props = { livro: CollectionEntry<"livros"> };
+const { livro } = Astro.props;
+const { titulo, autores = [], estilos = [], capa, anoPublicacao } = livro.data;
+
+const autoresEntries = await getEntries(autores);
+const estilosEntries = await getEntries(estilos);
+---
+
+<div class="flex gap-4">
+  <a href={withBase("/livros/" + livro.id)} class="shrink-0">
+    <Capa capa={capa} titulo={titulo} width={110} height={165} />
+  </a>
+  <div class="flex flex-col gap-1">
+    <a href={withBase("/livros/" + livro.id)}>
+      <h3 class="sigmar-ff text-base leading-tight">{titulo}</h3>
+    </a>
+    {
+      autoresEntries.length > 0 && (
+        <p class="kanit-regular text-xs">
+          por{" "}
+          {autoresEntries.map((a, i) => (
+            <>
+              <a
+                class="hover:underline"
+                href={withBase("/autores/" + a.id)}
+              >
+                {a.data.nome}
+              </a>
+              {i < autoresEntries.length - 1 ? ", " : ""}
+            </>
+          ))}
+          {anoPublicacao ? ` · ${anoPublicacao}` : ""}
+        </p>
+      )
+    }
+    <div class="flex flex-wrap gap-1.5 mt-1">
+      {
+        estilosEntries.map((e) => (
+          <Pill href={withBase("/estilos/" + e.id)}>
+            {e.data.emoji ? e.data.emoji + " " : ""}
+            {e.data.nome}
+          </Pill>
+        ))
+      }
+    </div>
+  </div>
+</div>

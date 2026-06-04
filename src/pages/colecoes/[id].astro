@@ -1,0 +1,63 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import LivroCard from "../../components/LivroCard.astro";
+import Capa from "../../components/Capa.astro";
+import { withBase } from "../../utils/helpers";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const colecoes = await getCollection("colecoes", ({ data }) => !(isProd && data.draft));
+  return colecoes.map((colecao) => ({ params: { id: colecao.id }, props: { colecao } }));
+}
+
+type Props = { colecao: CollectionEntry<"colecoes"> };
+const { colecao } = Astro.props;
+const { nome, descricao, capa } = colecao.data;
+
+const isProd = import.meta.env.PROD;
+const livros = (
+  await getCollection(
+    "livros",
+    ({ data }) =>
+      data.colecao?.id === colecao.id && !(isProd && data.draft)
+  )
+).sort(
+  (a, b) => (a.data.ordemNaColecao ?? 999) - (b.data.ordemNaColecao ?? 999)
+);
+---
+
+<MainLayout pageTitle={siteConfig.title + " | " + nome}>
+  <div class="page-content py-8">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-8">
+      <div class="shrink-0">
+        <Capa capa={capa} titulo={nome} width={150} height={225} />
+      </div>
+      <div class="text-center sm:text-left">
+        <h1 class="sigmar-ff">📦 {nome}</h1>
+        <p class="kanit-light text-xs">{livros.length} livros na coleção</p>
+        {descricao && <p class="font-light text-balance mt-3">{descricao}</p>}
+      </div>
+    </div>
+
+    <h2 class="sigmar-ff text-lg mb-4">Livros da coleção</h2>
+    {
+      livros.length === 0 ? (
+        <p class="font-light">Nenhum livro nesta coleção ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {livros.map((livro) => <LivroCard livro={livro} />)}
+        </div>
+      )
+    }
+
+    <div class="flex items-center justify-center my-8">
+      <Button class="back-link" href={withBase("/colecoes")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Todas as coleções
+      </Button>
+    </div>
+  </div>
+</MainLayout>

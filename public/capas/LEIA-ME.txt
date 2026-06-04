@@ -1,0 +1,1 @@
+Coloque aqui as imagens de capa dos livros (ex: o-hobbit.jpg) e referencie no livro como capa: /capas/o-hobbit.jpg

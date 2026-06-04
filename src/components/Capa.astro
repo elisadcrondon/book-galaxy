@@ -1,0 +1,43 @@
+---
+// Mostra a capa de um livro/coleção. Se não houver imagem, mostra um
+// placeholder simpático com o título.
+import { withBase } from "../utils/helpers";
+type Props = {
+  capa?: string;
+  titulo: string;
+  class?: string;
+  width?: number;
+  height?: number;
+};
+const { capa, titulo, class: className, width = 200, height = 300 } =
+  Astro.props;
+const src = capa
+  ? capa.startsWith("http")
+    ? capa
+    : withBase(capa)
+  : null;
+---
+
+{
+  src ? (
+    <img
+      src={src}
+      alt={`Capa de ${titulo}`}
+      width={width}
+      height={height}
+      loading="lazy"
+      class:list={["rounded-lg object-cover shadow-md", className]}
+      style={`aspect-ratio:${width}/${height}`}
+    />
+  ) : (
+    <div
+      class:list={[
+        "rounded-lg shadow-md flex items-center justify-center text-center p-3 bg-gradient-to-br from-space-red/30 to-space-yellow/30 kanit-bold text-sm",
+        className,
+      ]}
+      style={`aspect-ratio:${width}/${height};width:${width}px;max-width:100%`}
+    >
+      📖 {titulo}
+    </div>
+  )
+}

@@ -1,0 +1,35 @@
+---
+import type { GetStaticPathsOptions, Page } from "astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import Pagination from "../../components/Pagination.astro";
+import { sortResenhasByDateDesc } from "../../utils/helpers";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import ResenhaCard from "../../components/ResenhaCard.astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const isProd = import.meta.env.PROD;
+  const resenhas = (
+    await getCollection("resenhas", ({ data }) => !(isProd && data.draft))
+  ).sort(sortResenhasByDateDesc);
+  return paginate(resenhas, { pageSize: siteConfig.postsPerPage || 6 });
+}
+
+type Props = { page: Page<CollectionEntry<"resenhas">> };
+const { page } = Astro.props;
+---
+
+<MainLayout activePage="resenhas" pageTitle={siteConfig.title + " | Resenhas"}>
+  <div class="page-content py-8 text-center">
+    <h1 class="sigmar-ff">Resenhas</h1>
+    {
+      siteConfig.blog?.description && (
+        <p class="font-light text-balance">{siteConfig.blog.description}</p>
+      )
+    }
+    <div class="flex flex-col text-left gap-8 my-8 max-w-full">
+      {page.data.map((resenha) => <ResenhaCard resenha={resenha} />)}
+    </div>
+    {page.lastPage > 1 && <Pagination page={page} class="mb-16 sm:mb-24" />}
+  </div>
+</MainLayout>

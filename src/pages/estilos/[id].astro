@@ -1,0 +1,52 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import LivroCard from "../../components/LivroCard.astro";
+import { withBase } from "../../utils/helpers";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const estilos = await getCollection("estilos", ({ data }) => !(isProd && data.draft));
+  return estilos.map((estilo) => ({ params: { id: estilo.id }, props: { estilo } }));
+}
+
+type Props = { estilo: CollectionEntry<"estilos"> };
+const { estilo } = Astro.props;
+const { nome, descricao, emoji } = estilo.data;
+
+const isProd = import.meta.env.PROD;
+const livros = (
+  await getCollection(
+    "livros",
+    ({ data }) =>
+      data.estilos.some((e) => e.id === estilo.id) && !(isProd && data.draft)
+  )
+).sort((a, b) => a.data.titulo.localeCompare(b.data.titulo, "pt-BR"));
+---
+
+<MainLayout pageTitle={siteConfig.title + " | " + nome}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">{emoji ? emoji + " " : ""}{nome}</h1>
+    {descricao && <p class="font-light text-balance text-center mb-8">{descricao}</p>}
+
+    <h2 class="sigmar-ff text-lg mb-4">Livros deste estilo ({livros.length})</h2>
+    {
+      livros.length === 0 ? (
+        <p class="font-light">Nenhum livro deste estilo ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {livros.map((livro) => <LivroCard livro={livro} />)}
+        </div>
+      )
+    }
+
+    <div class="flex items-center justify-center my-8">
+      <Button class="back-link" href={withBase("/estilos")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Todos os estilos
+      </Button>
+    </div>
+  </div>
+</MainLayout>

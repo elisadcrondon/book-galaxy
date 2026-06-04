@@ -2,40 +2,39 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
-import { sortItemsByDateDesc, withBase } from "../utils/helpers";
-import PostCardPreview from "../components/PostCardPreview.astro";
+import { sortResenhasByDateDesc, withBase } from "../utils/helpers";
+import ResenhaCard from "../components/ResenhaCard.astro";
 import Button from "../components/Button.astro";
-import { Image } from "astro:assets";
-import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../icons/ArrowRight.astro";
 
-const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
+const isProd = import.meta.env.PROD;
+const resenhas = (await getCollection("resenhas", ({ data }) => !(isProd && data.draft)))
+  .sort(sortResenhasByDateDesc);
+
+const totalLivros = (await getCollection("livros")).length;
+const totalAutores = (await getCollection("autores")).length;
+const totalColecoes = (await getCollection("colecoes")).length;
 ---
 
-<MainLayout
-  activePage="home"
-  pageTitle={siteConfig.title + " | An Astro Personal Blog Template"}
->
+<MainLayout activePage="home" pageTitle={siteConfig.title}>
   <div
     class="jumbo-banner flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
-    <div class="w-full sm:w-fit sm:max-w-1/2">
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left gap-4 sm:max-w-1/2">
       {
         siteConfig.hero?.eyebrowText && (
           <span class="tag rounded-full text-xs px-2 py-0 border border-gray-500 kanit-light">
-            {siteConfig.hero?.eyebrowText}
+            {siteConfig.hero.eyebrowText}
           </span>
         )
       }
       <h1 class="sigmar-ff leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
-      <p class="kanit-regular text-balance text-xs sm:text-base">
+      <p class="kanit-regular text-balance text-sm sm:text-base max-w-xl">
         {siteConfig.hero?.text}
       </p>
-      <div
-        class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
-      >
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-2">
         {
           siteConfig.hero?.actions?.map((action, index) => (
             <Button
@@ -47,30 +46,42 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           ))
         }
       </div>
+      <p class="kanit-light text-xs mt-2">
+        📚 {totalLivros} livros · ✍️ {totalAutores} autores · 📦 {totalColecoes} coleções
+      </p>
     </div>
-    <div class="w-full sm:w-fit sm:max-w-1/2">
-      <!-- {siteConfig.hero?.image && <Image src={siteConfig.hero?.image?.src} alt={siteConfig.hero?.image?.alt || ""} inferSize={true} />} -->
-      <Image
-        class="cover-img"
-        src={heroImage}
-        alt={"Astronaut in space"}
-        width={400}
-        height={300}
+    <div class="w-full sm:w-fit sm:max-w-1/2 flex justify-center">
+      <img
+        class="cover-img w-full max-w-md h-auto"
+        src={withBase("/menina-lendo.png")}
+        alt="Menina lendo um livro, cercada por livros e estrelas"
+        width={500}
+        height={280}
+        loading="eager"
       />
     </div>
   </div>
+
   <div class="page-content">
-    <div id="posts" class="flex flex-col items-center justify-center w-full">
-      <h2 class="sigmar-ff text-balance pt-0! pb-8!">Recent Stories</h2>
-      <div class="flex flex-col gap-8 max-w-full text-left">
-        {
-          allPosts
-            .slice(0, siteConfig.recentPostLimit)
-            .map((post) => <PostCardPreview post={post} />)
-        }
-      </div>
-      <Button href={withBase("/blog")} class="space-btn-filled mt-8">
-        View All Posts <ArrowRight class="w-5 h-5 fill-current ml-4" />
+    <div id="resenhas" class="flex flex-col items-center justify-center w-full">
+      <h2 class="sigmar-ff text-balance pt-0! pb-8!">Últimas resenhas</h2>
+      {
+        resenhas.length === 0 ? (
+          <p class="font-light text-center">
+            Ainda não há resenhas. Crie a primeira na pasta <code>resenhas</code> 😊
+          </p>
+        ) : (
+          <div class="flex flex-col gap-8 max-w-full text-left w-full">
+            {resenhas
+              .slice(0, siteConfig.recentPostLimit)
+              .map((resenha) => (
+                <ResenhaCard resenha={resenha} />
+              ))}
+          </div>
+        )
+      }
+      <Button href={withBase("/resenhas")} class="space-btn-filled mt-8">
+        Ver todas as resenhas <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
   </div>

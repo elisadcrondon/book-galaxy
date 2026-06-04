@@ -1,0 +1,123 @@
+---
+import "../../styles/global.css";
+import {
+  type CollectionEntry,
+  getCollection,
+  getEntry,
+  getEntries,
+  render,
+} from "astro:content";
+import { sortResenhasByDateDesc, withBase } from "../../utils/helpers";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import Capa from "../../components/Capa.astro";
+import Nota from "../../components/Nota.astro";
+import Pill from "../../components/Pill.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const resenhas = (
+    await getCollection("resenhas", ({ data }) => !(isProd && data.draft))
+  ).sort(sortResenhasByDateDesc);
+  return resenhas.map((resenha) => ({
+    params: { id: resenha.id },
+    props: { resenha },
+  }));
+}
+
+type Props = { resenha: CollectionEntry<"resenhas"> };
+const { resenha } = Astro.props;
+const { Content } = await render(resenha);
+
+const livro = await getEntry(resenha.data.livro);
+const autores = livro ? await getEntries(livro.data.autores) : [];
+const estilos = livro ? await getEntries(livro.data.estilos) : [];
+const colecao = livro?.data.colecao ? await getEntry(livro.data.colecao) : null;
+const titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
+---
+
+<MainLayout pageTitle={siteConfig.title + " | " + titulo}>
+  <div class="page-content">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
+      {
+        livro && (
+          <a href={withBase("/livros/" + livro.id)} class="shrink-0">
+            <Capa
+              capa={livro.data.capa}
+              titulo={livro.data.titulo}
+              width={170}
+              height={255}
+            />
+          </a>
+        )
+      }
+      <div class="text-center sm:text-left">
+        <h1 class="sigmar-ff text-balance">{titulo}</h1>
+        {
+          livro && (
+            <p class="kanit-regular">
+              <a class="hover:underline" href={withBase("/livros/" + livro.id)}>
+                {livro.data.titulo}
+              </a>
+              {autores.length > 0 && (
+                <>
+                  {" — "}
+                  {autores.map((a, i) => (
+                    <>
+                      <a class="hover:underline" href={withBase("/autores/" + a.id)}>
+                        {a.data.nome}
+                      </a>
+                      {i < autores.length - 1 ? ", " : ""}
+                    </>
+                  ))}
+                </>
+              )}
+            </p>
+          )
+        }
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 my-3 text-sm">
+          <FormattedDate date={new Date(resenha.data.pubDate)} />
+          <Nota nota={resenha.data.nota} />
+          {resenha.data.favorita && <span title="Favorita">❤️ favorita</span>}
+        </div>
+        <div class="flex flex-wrap gap-1.5 justify-center sm:justify-start">
+          {
+            colecao && (
+              <Pill href={withBase("/colecoes/" + colecao.id)}>
+                📦 {colecao.data.nome}
+              </Pill>
+            )
+          }
+          {
+            estilos.map((e) => (
+              <Pill href={withBase("/estilos/" + e.id)}>
+                {e.data.emoji ? e.data.emoji + " " : ""}
+                {e.data.nome}
+              </Pill>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <article class="font-light text-left mt-4">
+      <Content />
+    </article>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 my-8">
+      <Button class="back-link" href={withBase("/resenhas")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Todas as resenhas
+      </Button>
+      {
+        livro && (
+          <Button class="back-link" href={withBase("/livros/" + livro.id)}>
+            Ver o livro
+          </Button>
+        )
+      }
+    </div>
+  </div>
+</MainLayout>

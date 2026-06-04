@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import LivroCard from "../../components/LivroCard.astro";
+
+const isProd = import.meta.env.PROD;
+const livros = (await getCollection("livros", ({ data }) => !(isProd && data.draft)))
+  .sort((a, b) => a.data.titulo.localeCompare(b.data.titulo, "pt-BR"));
+---
+
+<MainLayout activePage="livros" pageTitle={siteConfig.title + " | Livros"}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">Livros</h1>
+    <p class="kanit-regular text-center mb-8">
+      Todos os livros do acervo, em ordem alfabética.
+    </p>
+    {
+      livros.length === 0 ? (
+        <p class="font-light text-center">Nenhum livro cadastrado ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {livros.map((livro) => <LivroCard livro={livro} />)}
+        </div>
+      )
+    }
+  </div>
+</MainLayout>

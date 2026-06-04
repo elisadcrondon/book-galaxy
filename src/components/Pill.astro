@@ -1,0 +1,14 @@
+---
+type Props = { href: string; class?: string };
+const { href, class: className } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "tag inline-block rounded-full text-xs px-3 py-0.5 border border-gray-500 kanit-light hover:border-space-red dark:hover:border-space-yellow transition-colors",
+    className,
+  ]}
+>
+  <slot />
+</a>

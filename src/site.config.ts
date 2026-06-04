@@ -69,41 +69,45 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
-    title: 'Space Ahead',
-    description: 'A minimal space-inspired personal blog template built with Astro.js and Tailwind CSS, by Siddhesh Thadeshwar',
+    title: 'Book Galaxy',
+    description: 'Book Galaxy: o cantinho de livros da Elisa — resenhas, autores favoritos e coleções, com muito carinho. 📚',
     image: {
         src: '/space-ahead-preview.jpeg',
-        alt: 'Space Ahead ✨ - A minimal space-inspired personal blog template, created by Siddhesh Thadeshwar.'
+        alt: 'Book Galaxy — o blog de resenhas de livros da Elisa.'
     },
     headerNavLinks: [
         {
-            text: 'Home',
-            href: withBase('/')
+            text: 'Resenhas',
+            href: withBase('/resenhas')
         },
         {
-            text: 'Blog',
-            href: withBase('/blog')
+            text: 'Livros',
+            href: withBase('/livros')
         },
         {
-            text: 'Tags',
-            href: withBase('/tags')
+            text: 'Autores',
+            href: withBase('/autores')
         },
         {
-            text: 'About',
+            text: 'Estilos',
+            href: withBase('/estilos')
+        },
+        {
+            text: 'Coleções',
+            href: withBase('/colecoes')
+        },
+        {
+            text: 'Sobre',
             href: withBase('/about')
-        },
-        {
-            text: 'Contact',
-            href: withBase('/contact')
         }
     ],
     footerNavLinks: [
         {
-            text: 'About',
+            text: 'Sobre',
             href: withBase('/about')
         },
         {
-            text: 'Contact',
+            text: 'Contato',
             href: withBase('/contact')
         },
         {
@@ -130,27 +134,27 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        eyebrowText: 'Galaxy of Adventures',
-        title: 'Space Ahead ✨',
-        text: "Written by Astro-naut Sid, a space explorer at Beyond Earth.",
+        eyebrowText: 'Um livro de cada vez 📖',
+        title: 'Book Galaxy ✨',
+        text: "Oi! Eu sou a Elisa e aqui eu escrevo o que achei dos livros que leio. Dá uma olhada nas minhas resenhas!",
         image: {
             src: '/assets/images/pixeltrue-space-discovery.svg',
-            alt: 'A person sitting at a desk in front of a computer'
+            alt: 'Ilustração de leitura'
         },
         actions: [
             {
-                text: 'Read Now',
-                href: withBase('/blog')
+                text: 'Ler resenhas',
+                href: withBase('/resenhas')
             },
             {
-                text: 'Subscribe',
-                href: '#subscribe'
+                text: 'Ver livros',
+                href: withBase('/livros')
             }
         ]
     },
     about: {
-        title: 'About',
-        text: 'Space Ahead is a blog about space exploration and travel. It is written by Astro-naut Sid, a space explorer at Beyond Earth. Sid is known for his love of adventure and his insatiable curiosity about the universe. He has explored countless planets, discovered new life forms, and made friends with aliens along the way. 🚀',
+        title: 'Sobre',
+        text: 'O Book Galaxy é escrito e mantido pela Elisa, uma menina de 11 anos que adora ler. Aqui ela compartilha as resenhas dos livros que lê, seus autores favoritos e as coleções que está acompanhando. 📚💛',
     },
     contactInfo: {
         title: 'Contact',
@@ -176,15 +180,15 @@ const siteConfig: SiteConfig = {
         ]
     },
     subscribe: {
-        title: 'Subscribe to Space Ahead',
-        text: 'One update per week. All the latest stories in your inbox.',
+        title: 'Assine o Book Galaxy',
+        text: 'Receba as novas resenhas no seu e-mail.',
         formUrl: '#'
     },
     blog: {
-        description: "Read about my space adventures, explorations and the aliens I've met on my journeys."
+        description: "Todas as resenhas, da mais nova para a mais antiga."
     },
-    postsPerPage: 2,
-    recentPostLimit: 3
+    postsPerPage: 6,
+    recentPostLimit: 4
 };
 
 export default siteConfig;

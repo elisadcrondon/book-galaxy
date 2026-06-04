@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import { withBase } from "../../utils/helpers";
+
+const isProd = import.meta.env.PROD;
+const estilos = (await getCollection("estilos", ({ data }) => !(isProd && data.draft)))
+  .sort((a, b) => a.data.nome.localeCompare(b.data.nome, "pt-BR"));
+const livros = await getCollection("livros", ({ data }) => !(isProd && data.draft));
+
+function contaLivros(estiloId: string) {
+  return livros.filter((l) => l.data.estilos.some((e) => e.id === estiloId)).length;
+}
+---
+
+<MainLayout activePage="estilos" pageTitle={siteConfig.title + " | Estilos"}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">Estilos</h1>
+    <p class="kanit-regular text-center mb-8">
+      Gêneros e estilos dos livros. Clique para ver os livros de cada estilo.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      {
+        estilos.map((estilo) => (
+          <a
+            href={withBase("/estilos/" + estilo.id)}
+            class="tag rounded-full px-4 py-1 border border-gray-500 kanit-light hover:border-space-red dark:hover:border-space-yellow transition-colors"
+          >
+            {estilo.data.emoji ? estilo.data.emoji + " " : ""}
+            {estilo.data.nome} ({contaLivros(estilo.id)})
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

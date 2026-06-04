@@ -1,0 +1,162 @@
+---
+import {
+  type CollectionEntry,
+  getCollection,
+  getEntry,
+  getEntries,
+} from "astro:content";
+import { sortResenhasByDateDesc, withBase } from "../../utils/helpers";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import Capa from "../../components/Capa.astro";
+import Pill from "../../components/Pill.astro";
+import Nota from "../../components/Nota.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const livros = await getCollection("livros", ({ data }) => !(isProd && data.draft));
+  return livros.map((livro) => ({ params: { id: livro.id }, props: { livro } }));
+}
+
+type Props = { livro: CollectionEntry<"livros"> };
+const { livro } = Astro.props;
+const { titulo, sinopse, capa, anoPublicacao, paginas, ordemNaColecao } =
+  livro.data;
+
+const autores = await getEntries(livro.data.autores);
+const estilos = await getEntries(livro.data.estilos);
+const colecao = livro.data.colecao ? await getEntry(livro.data.colecao) : null;
+
+// resenhas deste livro
+const isProd = import.meta.env.PROD;
+const resenhas = (
+  await getCollection(
+    "resenhas",
+    ({ data }) => data.livro.id === livro.id && !(isProd && data.draft)
+  )
+).sort(sortResenhasByDateDesc);
+
+// outros livros da mesma coleção
+let outrosDaColecao: CollectionEntry<"livros">[] = [];
+if (colecao) {
+  outrosDaColecao = (
+    await getCollection(
+      "livros",
+      ({ data }) =>
+        data.colecao?.id === colecao.id && !(isProd && data.draft)
+    )
+  )
+    .filter((l) => l.id !== livro.id)
+    .sort(
+      (a, b) => (a.data.ordemNaColecao ?? 0) - (b.data.ordemNaColecao ?? 0)
+    );
+}
+---
+
+<MainLayout pageTitle={siteConfig.title + " | " + titulo}>
+  <div class="page-content">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
+      <div class="shrink-0">
+        <Capa capa={capa} titulo={titulo} width={200} height={300} />
+      </div>
+      <div class="text-center sm:text-left">
+        <h1 class="sigmar-ff text-balance">{titulo}</h1>
+        {
+          autores.length > 0 && (
+            <p class="kanit-regular">
+              por{" "}
+              {autores.map((a, i) => (
+                <>
+                  <a class="hover:underline" href={withBase("/autores/" + a.id)}>
+                    {a.data.nome}
+                  </a>
+                  {i < autores.length - 1 ? ", " : ""}
+                </>
+              ))}
+            </p>
+          )
+        }
+        <p class="kanit-light text-xs my-2">
+          {anoPublicacao ? `Publicado em ${anoPublicacao}` : ""}
+          {paginas ? ` · ${paginas} páginas` : ""}
+        </p>
+        <div class="flex flex-wrap gap-1.5 justify-center sm:justify-start my-3">
+          {
+            colecao && (
+              <Pill href={withBase("/colecoes/" + colecao.id)}>
+                📦 {colecao.data.nome}
+                {ordemNaColecao ? ` #${ordemNaColecao}` : ""}
+              </Pill>
+            )
+          }
+          {
+            estilos.map((e) => (
+              <Pill href={withBase("/estilos/" + e.id)}>
+                {e.data.emoji ? e.data.emoji + " " : ""}
+                {e.data.nome}
+              </Pill>
+            ))
+          }
+        </div>
+        {sinopse && <p class="font-light text-balance mt-3">{sinopse}</p>}
+      </div>
+    </div>
+
+    <section class="mt-8">
+      <h2 class="sigmar-ff text-lg">
+        {resenhas.length === 1 ? "Resenha" : "Resenhas"} ({resenhas.length})
+      </h2>
+      {
+        resenhas.length === 0 ? (
+          <p class="font-light">Ainda não há resenhas deste livro.</p>
+        ) : (
+          <ul class="flex flex-col gap-3 mt-3">
+            {resenhas.map((r) => (
+              <li>
+                <a
+                  class="flex items-center gap-3 hover:underline"
+                  href={withBase("/resenhas/" + r.id)}
+                >
+                  <span class="kanit-bold">
+                    {r.data.titulo || "Resenha"}
+                  </span>
+                  <Nota nota={r.data.nota} />
+                  <FormattedDate date={new Date(r.data.pubDate)} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    {
+      outrosDaColecao.length > 0 && colecao && (
+        <section class="mt-8">
+          <h2 class="sigmar-ff text-lg">
+            Mais da coleção {colecao.data.nome}
+          </h2>
+          <ul class="flex flex-col gap-2 mt-3">
+            {outrosDaColecao.map((l) => (
+              <li>
+                <a class="hover:underline" href={withBase("/livros/" + l.id)}>
+                  {l.data.ordemNaColecao ? `${l.data.ordemNaColecao}. ` : ""}
+                  {l.data.titulo}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="flex items-center justify-center my-8">
+      <Button class="back-link" href={withBase("/livros")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Todos os livros
+      </Button>
+    </div>
+  </div>
+</MainLayout>

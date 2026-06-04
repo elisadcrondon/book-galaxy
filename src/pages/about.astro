@@ -1,23 +1,21 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
-import coverImage from "../assets/images/1.png";
+import { withBase } from "../utils/helpers";
 ---
 
-<MainLayout activePage="about" pageTitle={siteConfig.title + " | About"}>
+<MainLayout activePage="sobre" pageTitle={siteConfig.title + " | Sobre"}>
   <div class="page-content">
-    <h1 class="sigmar-ff text-balance">{siteConfig.about?.title}</h1>
-    <Image
-      width={1024}
-      height={600}
+    <h1 class="sigmar-ff text-balance text-center">{siteConfig.about?.title}</h1>
+    <img
+      width={320}
+      height={320}
       loading="eager"
-      layout="constrained"
-      class="rounded-4xl mb-8 mx-auto"
-      src={coverImage}
-      alt="An Astronaut walking on a terrain"
+      class="mb-8 mx-auto w-64 sm:w-80 h-auto"
+      src={withBase("/elisa.png")}
+      alt="Elisa lendo um livro"
     />
-    <p class="kanit-light text-left">
+    <p class="kanit-light text-left text-balance max-w-xl mx-auto">
       {siteConfig.about?.text}
     </p>
   </div>

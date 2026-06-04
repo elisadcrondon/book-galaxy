@@ -1,0 +1,61 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import LivroCard from "../../components/LivroCard.astro";
+import Capa from "../../components/Capa.astro";
+import { withBase } from "../../utils/helpers";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const autores = await getCollection("autores", ({ data }) => !(isProd && data.draft));
+  return autores.map((autor) => ({ params: { id: autor.id }, props: { autor } }));
+}
+
+type Props = { autor: CollectionEntry<"autores"> };
+const { autor } = Astro.props;
+const { nome, nacionalidade, nascimento, bio, foto } = autor.data;
+
+const isProd = import.meta.env.PROD;
+const livros = (
+  await getCollection(
+    "livros",
+    ({ data }) =>
+      data.autores.some((a) => a.id === autor.id) && !(isProd && data.draft)
+  )
+).sort((a, b) => a.data.titulo.localeCompare(b.data.titulo, "pt-BR"));
+---
+
+<MainLayout pageTitle={siteConfig.title + " | " + nome}>
+  <div class="page-content py-8">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-8">
+      {foto && <Capa capa={foto} titulo={nome} width={140} height={140} class="rounded-full! object-cover" />}
+      <div class="text-center sm:text-left">
+        <h1 class="sigmar-ff">{nome}</h1>
+        <p class="kanit-light text-xs">
+          {nacionalidade}{nacionalidade && nascimento ? " · " : ""}{nascimento}
+        </p>
+        {bio && <p class="font-light text-balance mt-3">{bio}</p>}
+      </div>
+    </div>
+
+    <h2 class="sigmar-ff text-lg mb-4">Livros no acervo ({livros.length})</h2>
+    {
+      livros.length === 0 ? (
+        <p class="font-light">Nenhum livro deste autor ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {livros.map((livro) => <LivroCard livro={livro} />)}
+        </div>
+      )
+    }
+
+    <div class="flex items-center justify-center my-8">
+      <Button class="back-link" href={withBase("/autores")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Todos os autores
+      </Button>
+    </div>
+  </div>
+</MainLayout>

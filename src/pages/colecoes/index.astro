@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import { withBase } from "../../utils/helpers";
+import Capa from "../../components/Capa.astro";
+
+const isProd = import.meta.env.PROD;
+const colecoes = (await getCollection("colecoes", ({ data }) => !(isProd && data.draft)))
+  .sort((a, b) => a.data.nome.localeCompare(b.data.nome, "pt-BR"));
+const livros = await getCollection("livros", ({ data }) => !(isProd && data.draft));
+
+function contaLivros(colecaoId: string) {
+  return livros.filter((l) => l.data.colecao?.id === colecaoId).length;
+}
+---
+
+<MainLayout activePage="coleções" pageTitle={siteConfig.title + " | Coleções"}>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center">Coleções</h1>
+    <p class="kanit-regular text-center mb-8">
+      Séries e sagas com mais de um livro.
+    </p>
+    {
+      colecoes.length === 0 ? (
+        <p class="font-light text-center">Nenhuma coleção cadastrada ainda.</p>
+      ) : (
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {colecoes.map((colecao) => (
+            <a
+              href={withBase("/colecoes/" + colecao.id)}
+              class="flex gap-4 group"
+            >
+              <div class="shrink-0">
+                <Capa
+                  capa={colecao.data.capa}
+                  titulo={colecao.data.nome}
+                  width={90}
+                  height={135}
+                />
+              </div>
+              <div>
+                <h3 class="sigmar-ff text-base group-hover:underline">
+                  {colecao.data.nome}
+                </h3>
+                <p class="kanit-light text-xs">
+                  {contaLivros(colecao.id)} livros
+                </p>
+                {colecao.data.descricao && (
+                  <p class="font-light text-sm text-balance">
+                    {colecao.data.descricao}
+                  </p>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</MainLayout>
