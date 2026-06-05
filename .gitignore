@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# instrucoes locais do projeto
+CLAUDE.md
