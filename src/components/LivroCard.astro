@@ -5,8 +5,8 @@ import Capa from "./Capa.astro";
 import Idioma from "./Idioma.astro";
 import Pill from "./Pill.astro";
 
-type Props = { livro: CollectionEntry<"livros"> };
-const { livro } = Astro.props;
+type Props = { livro: CollectionEntry<"livros">; resenhaId?: string };
+const { livro, resenhaId } = Astro.props;
 const { titulo, autores = [], estilos = [], capa, idioma, anoPublicacao } =
   livro.data;
 
@@ -25,6 +25,16 @@ const estilosEntries = await getEntries(estilos);
     <a href={withBase("/livros/" + livro.id)}>
       <h3 class="sigmar-ff text-base leading-tight">{titulo}</h3>
     </a>
+    {
+      resenhaId && (
+        <a
+          class="kanit-bold text-xs hover:underline w-fit"
+          href={withBase("/resenhas/" + resenhaId)}
+        >
+          ✍️ ler resenha →
+        </a>
+      )
+    }
     {
       autoresEntries.length > 0 && (
         <p class="kanit-regular text-xs">

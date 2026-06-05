@@ -7,6 +7,13 @@ import LivroCard from "../../components/LivroCard.astro";
 const isProd = import.meta.env.PROD;
 const livros = (await getCollection("livros", ({ data }) => !(isProd && data.draft)))
   .sort((a, b) => a.data.titulo.localeCompare(b.data.titulo, "pt-BR"));
+
+// Mapa livro -> resenha (para mostrar o selo "ler resenha" só nos livros resenhados)
+const resenhas = await getCollection(
+  "resenhas",
+  ({ data }) => !(isProd && data.draft),
+);
+const resenhaPorLivro = new Map(resenhas.map((r) => [r.data.livro.id, r.id]));
 ---
 
 <MainLayout activePage="livros" pageTitle={siteConfig.title + " | Livros"}>
@@ -20,7 +27,9 @@ const livros = (await getCollection("livros", ({ data }) => !(isProd && data.dra
         <p class="font-light text-center">Nenhum livro cadastrado ainda.</p>
       ) : (
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {livros.map((livro) => <LivroCard livro={livro} />)}
+          {livros.map((livro) => (
+            <LivroCard livro={livro} resenhaId={resenhaPorLivro.get(livro.id)} />
+          ))}
         </div>
       )
     }
