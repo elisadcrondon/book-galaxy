@@ -1,5 +1,5 @@
 ---
-titulo: "Magic Tree House #7: Sunset of the Sabertooth"
+titulo: "Magic Tree House #7: Night of the New Magicians"
 autores:
   - mary-pope-osborne
 estilos:
@@ -7,8 +7,8 @@ estilos:
   - fantasia
 colecao: a-casa-da-arvore-magica
 ordemNaColecao: 7
-anoPublicacao: 1996
-capa: "https://covers.openlibrary.org/b/isbn/9780679863731-L.jpg"
+anoPublicacao: 2006
+capa: "https://covers.openlibrary.org/b/id/234106-L.jpg"
 idioma: en
-sinopse: "A casa da árvore mágica leva Jack e Annie para a Era do Gelo, onde eles encontram mamutes, ursos das cavernas e tigres-dentes-de-sabre."
+sinopse: "Merlin envia Jack e Annie em uma missão até a Paris de 1889, durante a Feira Mundial, para encontrar quatro grandes magos da ciência e protegê-los de um feiticeiro maligno."
 ---
