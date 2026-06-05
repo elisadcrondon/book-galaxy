@@ -9,6 +9,7 @@ colecao: a-escola-do-bem-e-do-mal
 ordemNaColecao: 2
 anoPublicacao: 2014
 paginas: 318
-capa: "https://covers.openlibrary.org/b/isbn/9780062104922-L.jpg"
+capa: "https://m.media-amazon.com/images/I/A17pO2twPLL.jpg"
+idioma: pt
 sinopse: "Agatha reabre os portões da escola e encontra tudo diferente: agora a divisão é entre meninas e meninos, e o final feliz parece longe."
 ---

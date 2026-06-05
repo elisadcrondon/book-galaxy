@@ -1,5 +1,5 @@
 ---
-titulo: "Asas de Fogo 2: A Princesa Perdida"
+titulo: "Asas de Fogo Vol. 2 (A Herdeira Desaparecida)"
 autores:
   - tui-t-sutherland
 estilos:
@@ -8,6 +8,7 @@ estilos:
 colecao: asas-de-fogo
 ordemNaColecao: 2
 anoPublicacao: 2013
-capa: "https://covers.openlibrary.org/b/isbn/9780545349192-L.jpg"
+capa: "https://m.media-amazon.com/images/I/71ygcDgPcrL.jpg"
+idioma: pt
 sinopse: "Agora é a vez de Tsunami, a dragoa das Asas do Mar, descobrir o seu reino e a sua família — mas nem tudo é como ela sonhava."
 ---

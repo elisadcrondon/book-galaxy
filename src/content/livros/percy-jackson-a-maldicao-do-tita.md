@@ -8,6 +8,7 @@ estilos:
 colecao: percy-jackson
 ordemNaColecao: 3
 anoPublicacao: 2007
-capa: "https://covers.openlibrary.org/b/isbn/9781423101451-L.jpg"
+capa: "https://m.media-amazon.com/images/I/61s1FVTeVpL.jpg"
+idioma: pt
 sinopse: "Percy e seus amigos partem numa missão de resgate cheia de perigos, enquanto a deusa Ártemis desaparece e um antigo titã ameaça acordar."
 ---

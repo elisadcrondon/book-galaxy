@@ -6,7 +6,7 @@ nota: 5
 favorita: true
 ---
 
-Eu reli esse livro e me diverti muito de novo! *Asas de Fogo 2: A Princesa Perdida* continua a aventura dos cinco dragõezinhos da profecia, e dessa vez a história foca em uma dragoa muito especial. 🐉
+Eu reli esse livro e me diverti muito de novo! *Asas de Fogo Vol. 2 (A Herdeira Desaparecida)* continua a aventura dos cinco dragõezinhos da profecia, e dessa vez a história foca em uma dragoa muito especial. 🐉
 
 Sobre a história:
 

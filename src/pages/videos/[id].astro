@@ -44,16 +44,43 @@ const embed = youtubeEmbed(video.data.youtube);
     }
 
     <div
-      class="relative aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md mb-8"
+      class="video-gate relative aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md mb-8"
     >
       <iframe
-        class="absolute inset-0 w-full h-full"
-        src={embed}
+        class="video-frame absolute inset-0 w-full h-full"
+        data-embed={embed}
         title={video.data.titulo}
         loading="lazy"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
+
+      <div
+        class="gate-overlay absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 p-6 text-center bg-gradient-to-br from-space-red/95 to-space-stone/95 text-whitesmoke"
+      >
+        <span class="text-5xl" aria-hidden="true">🔒</span>
+        <p class="kanit-bold text-lg text-balance">
+          As entrevistas, por enquanto, são só para amigos e amigas.
+        </p>
+        <p class="kanit-regular text-sm opacity-90 text-balance">
+          Digite a senha para assistir.
+        </p>
+        <form class="gate-form flex w-full max-w-xs flex-col items-center gap-2 sm:flex-row">
+          <input
+            type="password"
+            class="gate-input w-full rounded-full px-4 py-2 text-black"
+            placeholder="Senha"
+            autocomplete="off"
+            aria-label="Senha"
+          />
+          <button type="submit" class="button-link space-btn-filled whitespace-nowrap">
+            Entrar
+          </button>
+        </form>
+        <p class="gate-error kanit-regular hidden text-sm text-space-yellow">
+          Senha incorreta. Tente de novo.
+        </p>
+      </div>
     </div>
 
     <article class="font-light text-left mt-4 max-w-xl mx-auto">
@@ -67,3 +94,60 @@ const embed = youtubeEmbed(video.data.youtube);
     </div>
   </div>
 </MainLayout>
+
+<script>
+  // Trava simples para "amigos e amigas". Não é segurança forte (o site é
+  // estático), só evita que o vídeo apareça sem a senha. Comparamos o hash
+  // SHA-256 para não deixar a senha em texto puro no código.
+  const HASH =
+    "c2c4a539eb7b49aa52397e594faa96debce57a70fb2693af919239d9168d38a7";
+  const KEY = "videos-unlocked";
+
+  async function sha256(text: string): Promise<string> {
+    const buf = await crypto.subtle.digest(
+      "SHA-256",
+      new TextEncoder().encode(text),
+    );
+    return Array.from(new Uint8Array(buf))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  }
+
+  function unlock() {
+    document.querySelectorAll<HTMLIFrameElement>(".video-frame").forEach((el) => {
+      const embed = el.dataset.embed;
+      if (embed && !el.src) el.src = embed;
+    });
+    document.querySelectorAll(".gate-overlay").forEach((el) => el.remove());
+  }
+
+  function init() {
+    const gate = document.querySelector(".video-gate");
+    if (!gate) return;
+
+    if (sessionStorage.getItem(KEY) === "1") {
+      unlock();
+      return;
+    }
+
+    const form = gate.querySelector<HTMLFormElement>(".gate-form");
+    const input = gate.querySelector<HTMLInputElement>(".gate-input");
+    const error = gate.querySelector<HTMLParagraphElement>(".gate-error");
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!input) return;
+      const hash = await sha256(input.value);
+      if (hash === HASH) {
+        sessionStorage.setItem(KEY, "1");
+        unlock();
+      } else {
+        error?.classList.remove("hidden");
+        input.value = "";
+        input.focus();
+      }
+    });
+  }
+
+  init();
+</script>

@@ -8,6 +8,7 @@ estilos:
 colecao: a-escola-do-bem-e-do-mal
 ordemNaColecao: 1
 anoPublicacao: 2013
-capa: "https://covers.openlibrary.org/b/olid/OL28297514M-L.jpg"
+capa: "https://m.media-amazon.com/images/I/91lZ+yY0lyL.jpg"
+idioma: pt
 sinopse: "Sophie e Agatha são levadas para a Escola do Bem e do Mal, mas acabam na escola trocada e vivem uma aventura inesquecível."
 ---

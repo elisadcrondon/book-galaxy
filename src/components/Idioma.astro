@@ -1,0 +1,33 @@
+---
+// Mostra em que idioma a Elisa leu a edição do livro.
+// Deve combinar com a capa exibida (capa da edição lida).
+type Props = {
+  idioma?: "pt" | "en";
+  class?: string;
+  // compact: só "Português" / "Inglês" (para cards). Padrão: "Li em ..."
+  compact?: boolean;
+};
+const { idioma, class: className, compact = false } = Astro.props;
+
+const MAP = {
+  pt: { flag: "🇧🇷", label: "Li em português", short: "Português" },
+  en: { flag: "🇬🇧", label: "Li em inglês", short: "Inglês" },
+} as const;
+
+const info = idioma ? MAP[idioma] : null;
+---
+
+{
+  info && (
+    <span
+      class:list={[
+        "inline-flex items-center gap-1 rounded-full text-xs px-2.5 py-0.5 border border-gray-500 kanit-light",
+        className,
+      ]}
+      title={info.label}
+    >
+      <span aria-hidden="true">{info.flag}</span>
+      <span>{compact ? info.short : info.label}</span>
+    </span>
+  )
+}

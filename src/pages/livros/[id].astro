@@ -10,6 +10,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
 import ArrowLeft from "../../icons/ArrowLeft.astro";
 import Capa from "../../components/Capa.astro";
+import Idioma from "../../components/Idioma.astro";
 import Pill from "../../components/Pill.astro";
 import Nota from "../../components/Nota.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -23,7 +24,7 @@ export async function getStaticPaths() {
 
 type Props = { livro: CollectionEntry<"livros"> };
 const { livro } = Astro.props;
-const { titulo, sinopse, capa, anoPublicacao, paginas, ordemNaColecao } =
+const { titulo, sinopse, capa, idioma, anoPublicacao, paginas, ordemNaColecao } =
   livro.data;
 
 const autores = await getEntries(livro.data.autores);
@@ -59,8 +60,9 @@ if (colecao) {
 <MainLayout pageTitle={siteConfig.title + " | " + titulo}>
   <div class="page-content">
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
-      <div class="shrink-0">
+      <div class="shrink-0 flex flex-col items-center gap-2">
         <Capa capa={capa} titulo={titulo} width={200} height={300} />
+        <Idioma idioma={idioma} />
       </div>
       <div class="text-center sm:text-left">
         <h1 class="sigmar-ff text-balance">{titulo}</h1>

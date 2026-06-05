@@ -2,6 +2,7 @@
 import { type CollectionEntry, getEntry, getEntries } from "astro:content";
 import { withBase } from "../utils/helpers";
 import Capa from "./Capa.astro";
+import Idioma from "./Idioma.astro";
 import Nota from "./Nota.astro";
 import FormattedDate from "./FormattedDate.astro";
 
@@ -15,13 +16,14 @@ const titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
 
 <a href={withBase("/resenhas/" + resenha.id)} class="block group">
   <div class="flex gap-4">
-    <div class="shrink-0">
+    <div class="shrink-0 flex flex-col items-center gap-1.5">
       <Capa
         capa={livro?.data.capa}
         titulo={livro?.data.titulo || titulo}
         width={110}
         height={165}
       />
+      <Idioma idioma={livro?.data.idioma} compact />
     </div>
     <div class="flex flex-col gap-1">
       <h3 class="sigmar-ff text-base leading-tight group-hover:underline">

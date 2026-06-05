@@ -8,5 +8,6 @@ estilos:
 colecao: o-principe-dragao
 ordemNaColecao: 1
 capa: "https://covers.openlibrary.org/b/isbn/9781338608816-L.jpg"
+idioma: en
 sinopse: "Uma elfa, um príncipe e seu meio-irmão partem numa jornada para impedir uma guerra entre o mundo mágico e o mundo humano."
 ---

@@ -10,6 +10,7 @@ colecao: as-cronicas-de-narnia
 ordemNaColecao: 1
 anoPublicacao: 1950
 paginas: 208
-capa: "https://covers.openlibrary.org/b/olid/OL22639887M-L.jpg"
+capa: "https://m.media-amazon.com/images/I/7158aW38zxL.jpg"
+idioma: pt
 sinopse: "Quatro irmãos atravessam um guarda-roupa mágico e chegam a Nárnia, um reino preso num inverno eterno que espera por heróis."
 ---

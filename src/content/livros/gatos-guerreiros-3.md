@@ -8,6 +8,7 @@ estilos:
 colecao: gatos-guerreiros
 ordemNaColecao: 3
 anoPublicacao: 2003
-capa: "https://covers.openlibrary.org/b/isbn/9780060000042-L.jpg"
+capa: "https://m.media-amazon.com/images/I/71Hz2yNGiEL.jpg"
+idioma: pt
 sinopse: "Fogo do Coração tenta descobrir a verdade escondida na floresta, enquanto a traição ronda os clãs."
 ---

@@ -2,20 +2,25 @@
 import { type CollectionEntry, getEntries } from "astro:content";
 import { withBase } from "../utils/helpers";
 import Capa from "./Capa.astro";
+import Idioma from "./Idioma.astro";
 import Pill from "./Pill.astro";
 
 type Props = { livro: CollectionEntry<"livros"> };
 const { livro } = Astro.props;
-const { titulo, autores = [], estilos = [], capa, anoPublicacao } = livro.data;
+const { titulo, autores = [], estilos = [], capa, idioma, anoPublicacao } =
+  livro.data;
 
 const autoresEntries = await getEntries(autores);
 const estilosEntries = await getEntries(estilos);
 ---
 
 <div class="flex gap-4">
-  <a href={withBase("/livros/" + livro.id)} class="shrink-0">
-    <Capa capa={capa} titulo={titulo} width={110} height={165} />
-  </a>
+  <div class="shrink-0 flex flex-col items-center gap-1.5">
+    <a href={withBase("/livros/" + livro.id)}>
+      <Capa capa={capa} titulo={titulo} width={110} height={165} />
+    </a>
+    <Idioma idioma={idioma} compact />
+  </div>
   <div class="flex flex-col gap-1">
     <a href={withBase("/livros/" + livro.id)}>
       <h3 class="sigmar-ff text-base leading-tight">{titulo}</h3>

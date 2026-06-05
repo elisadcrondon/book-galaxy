@@ -11,10 +11,14 @@
             "id": "d455a4f0022bebdd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "resenhas/principe-dragao.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "principe-dragao"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "resenhas/principe-dragao.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Links inversos"
+              "title": "Links inversos para principe-dragao"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "resenhas/principe-dragao.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Links de saída"
+              "title": "Links de saída para principe-dragao"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "resenhas/principe-dragao.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário"
+              "title": "Sumário de principe-dragao"
             }
           },
           {
@@ -187,40 +194,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "54e3e8759d3449e4",
+  "active": "d455a4f0022bebdd",
   "lastOpenFiles": [
+    "resenhas/criaturas-impossiveis.md",
+    "resenhas/keeper-of-the-lost-cities-1.md",
+    "resenhas/percy-jackson-a-maldicao-do-tita.md",
+    "resenhas/magnus-chase-a-espada-do-verao.md",
+    "resenhas/nevermoor.md",
+    "resenhas/magic-tree-house-7.md",
+    "resenhas/guts.md",
+    "resenhas/sisters.md",
+    "resenhas/the-last-kids-on-earth-1.md",
+    "resenhas/asas-de-fogo-o-reino-escondido.md",
+    "resenhas/gatos-guerreiros-4.md",
+    "resenhas/gatos-guerreiros-3.md",
+    "resenhas/gatos-guerreiros-2.md",
+    "resenhas/star-wars-a-luz-dos-jedi.md",
+    "resenhas/asas-de-fogo-a-princesa-perdida.md",
+    "resenhas/gatos-guerreiros-1.md",
+    "resenhas/o-primeiro-gato-no-espaco-e-a-vinganca-do-bebe-pirata.md",
+    "resenhas/o-primeiro-gato-no-espaco-e-a-furia-do-clips.md",
+    "resenhas/o-principe-dragao-2.md",
+    "resenhas/a-origem-da-escola-do-bem-e-do-mal.md",
+    "resenhas/a-rainha-vermelha.md",
+    "resenhas/asas-de-fogo.md",
+    "resenhas/principe-dragao.md",
+    "mensais/2026-05.md",
+    "mensais/2026-04.md",
+    "livros/criaturas-impossiveis.md",
+    "Sem título.base",
     "newsletter/book-galaxy-retrospectiva-mensal.zip",
     "newsletter/book-galaxy-retrospectiva-mensal.html",
     "newsletter/book-galaxy-modelo-generico.zip",
     "newsletter/book-galaxy-modelo-generico.html",
     "newsletter",
-    "videos/gatos-guerreiros-1-4.md",
-    "mensais/2026-03.md",
-    "mensais/2026-02.md",
-    "livros/star-wars-a-luz-dos-jedi.md",
-    "livros/asas-de-fogo-a-princesa-perdida.md",
-    "livros/gatos-guerreiros-1.md",
     "livros/gatos-guerreiros-1.md.tmp.50480.e9990f12b0f3",
-    "livros/o-primeiro-gato-no-espaco-e-a-vinganca-do-bebe-pirata.md",
-    "livros/o-primeiro-gato-no-espaco-e-a-furia-do-clips.md",
-    "livros/o-principe-dragao-2.md",
-    "livros/a-origem-da-escola-do-bem-e-do-mal.md",
-    "colecoes/star-wars-a-alta-republica.md",
-    "colecoes/gatos-guerreiros.md",
-    "autores/charles-soule.md",
-    "autores/erin-hunter.md",
-    "videos/exemplo-entrevista.md",
     "videos",
-    "_templates/Video.md",
-    "mensais/2026-05.md",
-    "mensais",
-    "_templates/Mensal.md",
-    "resenhas/homem-cao.md",
-    "resenhas/a-rainha-vermelha.md",
-    "resenhas/o-primeiro-gato-no-espaco.md",
-    "resenhas/principe-dragao.md",
-    "resenhas/coraline.md",
-    "resenhas/a-escola-do-bem-e-do-mal-2.md",
-    "resenhas/a-escola-do-bem-e-do-mal.md"
+    "mensais"
   ]
 }

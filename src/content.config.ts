@@ -63,6 +63,9 @@ const livros = defineCollection({
         paginas: z.number().optional(),
         // caminho de capa em /public/capas (ex: "/capas/o-hobbit.jpg")
         capa: z.string().optional(),
+        // idioma da edição que a Elisa leu: "pt" (português) ou "en" (inglês).
+        // Deve combinar com a capa mostrada (capa da edição lida).
+        idioma: z.enum(["pt", "en"]).optional(),
         sinopse: z.string().optional(),
         draft: z.boolean().optional(),
     }),

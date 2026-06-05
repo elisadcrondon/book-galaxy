@@ -12,6 +12,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
 import ArrowLeft from "../../icons/ArrowLeft.astro";
 import Capa from "../../components/Capa.astro";
+import Idioma from "../../components/Idioma.astro";
 import Nota from "../../components/Nota.astro";
 import Pill from "../../components/Pill.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
@@ -44,14 +45,17 @@ const titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
       {
         livro && (
-          <a href={withBase("/livros/" + livro.id)} class="shrink-0">
-            <Capa
-              capa={livro.data.capa}
-              titulo={livro.data.titulo}
-              width={170}
-              height={255}
-            />
-          </a>
+          <div class="shrink-0 flex flex-col items-center gap-2">
+            <a href={withBase("/livros/" + livro.id)}>
+              <Capa
+                capa={livro.data.capa}
+                titulo={livro.data.titulo}
+                width={170}
+                height={255}
+              />
+            </a>
+            <Idioma idioma={livro.data.idioma} />
+          </div>
         )
       }
       <div class="text-center sm:text-left">
