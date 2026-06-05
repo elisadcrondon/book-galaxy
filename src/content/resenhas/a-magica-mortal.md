@@ -6,8 +6,16 @@ nota: 5
 favorita: true
 ---
 
-Eu amo este livro! *A Mágica Mortal* conta a história de um grupo de amigos que fica muito triste ao perder um amigo querido. Em vez de desistir, eles se unem e começam a procurar o mágico misterioso que causou tudo isso.
+Eu amo este livro! *A Mágica Mortal* foi uma leitura super rápida e cheia de emoção, e eu vou contar um pouco sobre ele para você ter vontade de ler também.
 
-No meio da investigação surgem dilemas, segredos e uma reviravolta enorme que eu não esperava! O mais legal é que dá para tentar descobrir quem é o culpado antes dos próprios detetives da história. Fique de olho nas pistas espalhadas pelo livro: elas estão ali esperando por você. 🔎
+Sobre a história:
 
-Esse livro mostra os vários lados de uma amizade e ainda te ensina alguns truques de mágica. É uma leitura rápida e cheia de emoção: eu li em menos de uma semana, e todas as pessoas que eu conheço que leram deram a nota máxima. Raphael Montes é um escritor brasileiro, e fico muito feliz de ler um mistério tão bom escrito aqui no Brasil. Recomendo demais! 💛
+A história conta sobre um grupo de amigos que fica muito triste ao perder um amigo querido. Em vez de desistir, eles se unem e começam a procurar o mágico misterioso que causou tudo isso. No meio da investigação aparecem dilemas, segredos e uma reviravolta enorme que eu sinceramente não esperava!
+
+O mais legal de tudo é que dá para tentar descobrir quem é o culpado antes dos próprios detetives da história. A minha dica é ficar de olho nas pistas espalhadas pelo livro, porque elas estão ali, esperando por você. 🔎
+
+Minha experiência:
+
+Esse livro mostra os vários lados de uma amizade e ainda ensina alguns truques de mágica de verdade, o que eu achei muito divertido. É uma leitura rápida e cheia de emoção: eu li em menos de uma semana, e todas as pessoas que eu conheço que leram deram a nota máxima.
+
+Outra coisa que me deixou muito feliz é que o Raphael Montes é um escritor brasileiro. Eu adoro saber que um mistério tão bom assim foi escrito aqui no Brasil, e isso me dá ainda mais vontade de ler outros livros de autores brasileiros. Eu recomendo demais, você não vai conseguir parar de ler! 💛 Com carinho, Elisa.

@@ -6,8 +6,16 @@ nota: 5
 favorita: true
 ---
 
-Eu reli esse livro e lembrei do quanto ele é bom! *Asas de Fogo* conta a história de uma antiga profecia que precisa se realizar — e os dragões escolhidos para isso passam por aventuras e mistérios de tirar o fôlego. 🐉
+Eu reli esse livro e lembrei do quanto ele é bom! *Asas de Fogo* é uma das minhas coleções favoritas, e vou contar um pouquinho sobre ela para você.
 
-O mundo dos dragões está em guerra há muito tempo. Cinco dragõezinhos, entre eles o Lamur (um dragão asa-da-lama), foram criados em segredo para cumprir a profecia e trazer a paz. Só que, como em todo bom livro, as reviravoltas chegam mais rápido do que qualquer personagem consegue imaginar!
+Sobre a história:
 
-Eu recomendo demais para quem ama dragões. Tem a versão em capítulos e também em quadrinhos, então você escolhe a que mais gosta. Esse livro faz você grudar no sofá lendo horas e horas!
+A história fala sobre uma antiga profecia que precisa se realizar para acabar com uma guerra muito longa entre os dragões. Cinco dragõezinhos foram criados em segredo, escondidos do mundo, justamente para cumprir essa profecia e trazer a paz de volta. Entre eles está o Lamur, um dragão asa-da-lama, que é um dos meus preferidos.
+
+Só que, como em todo bom livro, as reviravoltas chegam mais rápido do que qualquer personagem consegue imaginar! Os cinco dragõezinhos vivem aventuras e mistérios de tirar o fôlego, e a cada capítulo eu queria saber o que ia acontecer em seguida. 🐉
+
+Minha experiência:
+
+O que eu mais amo nesse livro é poder imaginar cada dragão com a sua personalidade e o seu tipo de magia. Eu me apeguei muito a eles e fiquei torcendo para que conseguissem cumprir a profecia. Mesmo relendo, eu me diverti como se fosse a primeira vez.
+
+Uma coisa muito legal é que existe a versão em capítulos e também a versão em quadrinhos, então você escolhe a que mais gosta. Eu recomendo demais para quem ama dragões. Esse livro faz você grudar no sofá lendo horas e horas! Com carinho, Elisa.

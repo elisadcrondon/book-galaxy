@@ -6,8 +6,16 @@ nota: 4.5
 favorita: false
 ---
 
-Você já ouviu falar do *Homem-Cão*? Talvez tenha visto o filme! Eu amei ler esse livro e espero que você também ame. É uma história em quadrinhos com desenhos sensacionais e uma escrita fácil e muito engraçada. 💥
+Você já ouviu falar do *Homem-Cão*? Talvez você tenha visto o filme! Eu amei ler esse livro e espero que você também ame. Vou contar um pouco sobre essa história tão divertida.
 
-A história começa com um policial e um cão que sofrem um acidente e precisam ser operados. No meio da operação, os médicos têm uma ideia maluca: juntar a cabeça do cão com o corpo do homem. E assim nasce um novo herói, o Homem-Cão!
+Sobre a história:
 
-Em cada livro surge um vilão novo com um plano diferente. O Pepe, um gato malvado (mas com um coração nobre escondido), está sempre aprontando, e as reviravoltas não param de aparecer. O Dav Pilkey fez uma verdadeira obra de arte. Diversão garantida!
+Tudo começa com um policial e um cão que trabalham juntos e que, um dia, sofrem um acidente e precisam ser operados. No meio da operação, os médicos têm uma ideia maluca: juntar a cabeça do cão com o corpo do homem. E foi assim que nasceu um novo herói, o Homem-Cão!
+
+Em cada livro aparece um vilão novo com um plano diferente para aprontar. O Pepe, que é um gato malvado (mas que tem um coração nobre escondido), está sempre causando confusão, e as reviravoltas não param de aparecer. Eu nunca sei o que vai acontecer na próxima página!
+
+Minha experiência:
+
+É uma história em quadrinhos com desenhos sensacionais e uma escrita fácil e muito engraçada. 💥 Eu ria bastante enquanto lia, e por ser em quadrinhos a leitura passa voando. Mesmo sendo divertido, o livro também fala sobre amizade e sobre fazer a coisa certa, o que eu achei muito legal.
+
+O Dav Pilkey fez uma verdadeira obra de arte com essa coleção. Eu recomendo para quem quer rir e se divertir bastante. Diversão garantida! Com carinho, Elisa.
