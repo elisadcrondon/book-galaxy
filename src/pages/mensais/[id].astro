@@ -12,6 +12,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
 import ArrowLeft from "../../icons/ArrowLeft.astro";
 import Capa from "../../components/Capa.astro";
+import Idioma from "../../components/Idioma.astro";
 import siteConfig from "../../site.config";
 
 export async function getStaticPaths() {
@@ -78,9 +79,14 @@ const resenhaPorLivro = new Map(
                 <span class="kanit-regular text-xs mt-2 leading-tight group-hover:underline">
                   {livro.data.titulo}
                 </span>
-                {resenhaId && (
-                  <span class="text-[0.65rem] opacity-70">ler resenha →</span>
-                )}
+                <span class="flex flex-wrap justify-center gap-1 mt-1.5">
+                  <Idioma idioma={livro.data.idioma} />
+                  {resenhaId && (
+                    <span class="inline-flex items-center gap-1 rounded-full text-xs px-2.5 py-0.5 border border-gray-500 kanit-light">
+                      ✍️ Resenha
+                    </span>
+                  )}
+                </span>
               </a>
             );
           })}
