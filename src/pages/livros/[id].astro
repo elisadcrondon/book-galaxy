@@ -57,7 +57,13 @@ if (colecao) {
 }
 ---
 
-<MainLayout pageTitle={siteConfig.title + " | " + titulo}>
+<MainLayout
+  pageTitle={siteConfig.title + " | " + titulo}
+  description={(
+    sinopse ??
+    `Ficha do livro "${titulo}" no Book Galaxy, o blog de resenhas da Elisa.`
+  ).slice(0, 160)}
+>
   <div class="page-content">
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
       <div class="shrink-0 flex flex-col items-center gap-2">

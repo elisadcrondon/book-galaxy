@@ -28,7 +28,12 @@ const livros = (
 ).sort((a, b) => a.data.titulo.localeCompare(b.data.titulo, "pt-BR"));
 ---
 
-<MainLayout pageTitle={siteConfig.title + " | " + nome}>
+<MainLayout
+  pageTitle={siteConfig.title + " | " + nome}
+  description={(
+    bio ?? `Livros de ${nome} resenhados por Elisa no Book Galaxy.`
+  ).slice(0, 160)}
+>
   <div class="page-content py-8">
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-8">
       {foto && <Capa capa={foto} titulo={nome} width={140} height={140} class="rounded-full! object-cover" />}

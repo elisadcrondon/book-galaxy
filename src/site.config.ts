@@ -68,7 +68,7 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://book-galaxy.com',
     title: 'Book Galaxy',
     description: 'Book Galaxy: o cantinho de livros da Elisa — resenhas, autores favoritos e coleções, com muito carinho. 📚',
     image: {

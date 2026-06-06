@@ -38,9 +38,60 @@ const autores = livro ? await getEntries(livro.data.autores) : [];
 const estilos = livro ? await getEntries(livro.data.estilos) : [];
 const colecao = livro?.data.colecao ? await getEntry(livro.data.colecao) : null;
 const titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
+
+// Descrição para o Google e redes sociais
+const nomesAutores = autores.map((a) => a.data.nome).join(", ");
+const partes = [
+  `Resenha de "${livro?.data.titulo ?? titulo}"`,
+  nomesAutores ? ` de ${nomesAutores}` : "",
+  resenha.data.nota != null ? ` — nota ${resenha.data.nota}/5` : "",
+  ". ",
+  livro?.data.sinopse ?? "Leia a opinião da Elisa no Book Galaxy.",
+];
+const descricao = partes.join("").replace(/\s+/g, " ").trim().slice(0, 160);
+
+// Dados estruturados (Schema.org) — permite que o Google mostre as estrelas
+const jsonLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  name: titulo,
+  datePublished: new Date(resenha.data.pubDate).toISOString().split("T")[0],
+  author: { "@type": "Person", name: "Elisa" },
+  publisher: { "@type": "Organization", name: siteConfig.title },
+  itemReviewed: {
+    "@type": "Book",
+    name: livro?.data.titulo ?? titulo,
+    ...(nomesAutores
+      ? {
+          author: autores.map((a) => ({ "@type": "Person", name: a.data.nome })),
+        }
+      : {}),
+    ...(livro?.data.anoPublicacao
+      ? { datePublished: String(livro.data.anoPublicacao) }
+      : {}),
+    ...(livro?.data.paginas ? { numberOfPages: livro.data.paginas } : {}),
+  },
+};
+if (resenha.data.nota != null) {
+  jsonLd.reviewRating = {
+    "@type": "Rating",
+    ratingValue: resenha.data.nota,
+    bestRating: 5,
+    worstRating: 0,
+  };
+}
 ---
 
-<MainLayout pageTitle={siteConfig.title + " | " + titulo}>
+<MainLayout
+  pageTitle={siteConfig.title + " | " + titulo}
+  description={descricao}
+  ogType="article"
+>
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify(jsonLd)}
+  />
   <div class="page-content">
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start my-6">
       {

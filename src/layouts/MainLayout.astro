@@ -11,21 +11,57 @@ type LayoutProps = {
   pageTitle: string;
   activePage: string;
   showSubscribeForm?: boolean;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
 };
 const {
   pageTitle,
   activePage,
   showSubscribeForm = true,
+  description = siteConfig.description,
+  ogImage = siteConfig.image?.src,
+  ogType = "website",
 } = Astro.props as LayoutProps;
+
+// URL canônica desta página (usa o domínio definido em astro.config -> Astro.site)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Imagem de preview absoluta para redes sociais
+const socialImage = ogImage
+  ? new URL(withBase(ogImage), Astro.site)
+  : undefined;
 ---
 
 <!doctype html>
-<html lang="en" class="antialiased break-words light">
+<html lang="pt-BR" class="antialiased break-words light">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href={withBase(`/space-ahead-logo.png`)} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteConfig.title} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+
+    <!-- Twitter Card -->
+    <meta
+      name="twitter:card"
+      content={socialImage ? "summary_large_image" : "summary"}
+    />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+
     <link rel="sitemap" href={withBase(`/sitemap-index.xml`)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +75,7 @@ const {
       title={siteConfig.title + " - RSS Feed"}
       href={new URL(withBase("/rss.xml"), Astro.site)}
     />
-    <title>{pageTitle}</title>
+    <slot name="head" />
   </head>
   <body>
     <main class="max-w-3xl mx-auto min-h-screen">

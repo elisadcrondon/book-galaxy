@@ -48,7 +48,14 @@ const resenhaPorLivro = new Map(
 );
 ---
 
-<MainLayout activePage="mensais" pageTitle={siteConfig.title + " | " + titulo}>
+<MainLayout
+  activePage="mensais"
+  pageTitle={siteConfig.title + " | " + titulo}
+  description={`Os livros que a Elisa leu em ${titulo}: resenhas e retrospectiva no Book Galaxy.`.slice(
+    0,
+    160,
+  )}
+>
   <div class="page-content py-8">
     <h1 class="sigmar-ff text-center">{titulo}</h1>
     <p class="kanit-regular text-center mb-8">

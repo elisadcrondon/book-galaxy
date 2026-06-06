@@ -30,7 +30,12 @@ const livros = (
 );
 ---
 
-<MainLayout pageTitle={siteConfig.title + " | " + nome}>
+<MainLayout
+  pageTitle={siteConfig.title + " | " + nome}
+  description={(
+    descricao ?? `A coleção ${nome} resenhada por Elisa no Book Galaxy.`
+  ).slice(0, 160)}
+>
   <div class="page-content py-8">
     <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-8">
       <div class="shrink-0">
