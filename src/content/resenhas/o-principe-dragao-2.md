@@ -16,6 +16,6 @@ No caminho aparece a Claudia, uma antiga amiga que agora muitos chamam de traido
 
 Minha experiência:
 
-Eu acho que gostei ainda mais do segundo livro do que do primeiro, porque a história fica mais profunda e os personagens crescem muito. Dá para sentir as dúvidas e os medos de cada um, e isso me fez torcer ainda mais por eles. Como eu li em inglês, foi uma experiência diferente, mas valeu muito a pena.
+Eu acho que gostei ainda mais do segundo livro do que do primeiro, porque a história fica mais profunda e os personagens crescem muito. Uma coisa que eu adoro nessa versão em livro é que dá para entender o que cada personagem está pensando e sentindo por dentro, coisa que na tela a gente não vê. Dá para sentir as dúvidas e os medos de cada um, e isso me fez torcer ainda mais por eles. Como eu li em inglês, foi uma experiência diferente, mas valeu muito a pena.
 
-Esse livro é cheio de ação, amizade e magia, do jeitinho que eu amo. Eu recomendo demais, principalmente se você já leu o primeiro e quer saber o que acontece em seguida! Com carinho, Elisa.
+Esse livro é cheio de ação, amizade e magia, do jeitinho que eu amo. Eu recomendo demais, principalmente se você já leu o primeiro e quer saber o que acontece em seguida. E mesmo quem nunca viu a série consegue entrar nessa história sem problema! Com carinho, Elisa.

@@ -16,6 +16,6 @@ Agora os castelos não se dividem mais entre Bem e Mal, e sim entre Meninas e Me
 
 Minha experiência:
 
-Foi muito legal ver a amizade da Sophie e da Agatha sendo colocada à prova de novo, mas de um jeito diferente. Dessa vez a história fala bastante sobre o que acontece quando os meninos e as meninas param de se entender, e eu achei isso bem interessante de acompanhar. Teve partes que me deixaram nervosa e outras que me fizeram rir, e as reviravoltas continuam aparecendo quando a gente menos espera.
+Foi muito legal ver a amizade da Sophie e da Agatha sendo colocada à prova de novo, mas de um jeito diferente. Dessa vez a história fala bastante sobre o que acontece quando os meninos e as meninas param de se entender, e também sobre escolher entre a amizade e outras coisas que a gente quer. Eu achei isso bem interessante de acompanhar, porque me fez pensar no que eu faria no lugar delas. Teve partes que me deixaram nervosa e outras que me fizeram rir, e as reviravoltas continuam aparecendo quando a gente menos espera.
 
-Eu dei uma nota um pouquinho menor do que a do primeiro livro, mas só porque o primeiro me surpreendeu mais. Mesmo assim, eu recomendo muito continuar a saga, porque vale muito a pena! Com carinho, Elisa.
+Eu dei uma nota um pouquinho menor do que a do primeiro livro, mas só porque o primeiro me surpreendeu mais. Mesmo assim, eu recomendo muito continuar a saga: se você gostou do primeiro e quer saber o que acontece com a Sophie e a Agatha, vale muito a pena! Com carinho, Elisa.

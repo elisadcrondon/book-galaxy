@@ -16,6 +16,6 @@ Em cada livro aparece um vilão novo com um plano diferente para aprontar. O Pep
 
 Minha experiência:
 
-É uma história em quadrinhos com desenhos sensacionais e uma escrita fácil e muito engraçada. 💥 Eu ria bastante enquanto lia, e por ser em quadrinhos a leitura passa voando. Mesmo sendo divertido, o livro também fala sobre amizade e sobre fazer a coisa certa, o que eu achei muito legal.
+É uma história em quadrinhos com desenhos sensacionais e uma escrita fácil e muito engraçada. 💥 Eu ria bastante enquanto lia, e por ser em quadrinhos a leitura passa voando, dá para terminar quase de uma vez só. Tem até umas páginas em que dá para fazer os desenhos se mexerem e outras que ensinam a desenhar os personagens, o que eu achei o máximo. Mesmo sendo super divertido, o livro também fala sobre amizade, sobre ser gentil e sobre fazer a coisa certa, o que eu achei muito legal.
 
-O Dav Pilkey fez uma verdadeira obra de arte com essa coleção. Eu recomendo para quem quer rir e se divertir bastante. Diversão garantida! Com carinho, Elisa.
+O Dav Pilkey fez uma verdadeira obra de arte com essa coleção. Eu recomendo demais para quem quer rir e se divertir bastante, e principalmente para quem acha que não gosta de ler: aposto que esse aqui muda de ideia! Diversão garantida! Com carinho, Elisa.

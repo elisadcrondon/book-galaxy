@@ -18,7 +18,7 @@ Minhas perspectivas e impressões:
 
 Quando eu li o livro pela primeira vez, eu amei entender mais sobre o mundo de Katolis e Xadia. Já na segunda vez que eu li, eu me foquei mais em entender a dinâmica e a organização das cidades e dos ambientes que aparecem na história.
 
-Me encantou muito como uma história sobre dragões e fantasia conseguiu fazer a minha mente achar que aquele mundo era real. O livro apresenta muitas coisas que eu sinceramente achei mais densas do que na série. Porém, ainda assim, eu me diverti muito lendo e amei imaginar esse mundo fictício na minha cabeça.
+Me encantou muito como uma história sobre dragões e fantasia conseguiu fazer a minha mente achar que aquele mundo era real. O livro apresenta muitas coisas que eu sinceramente achei mais densas do que na série. A parte que eu mais amei foi poder entrar na cabeça dos personagens e entender o que cada um está pensando e sentindo por dentro, coisa que na série a gente só imagina. Isso me fez gostar ainda mais deles. Porém, ainda assim, eu me diverti muito lendo e amei imaginar esse mundo fictício na minha cabeça.
 
 Sobre a história:
 
@@ -30,7 +30,7 @@ Numa tarde escura e estranha, Rayla foi completar a sua missão quando encontra 
 
 No final temos uma aventura épica e desafiadora, que já deixa um gancho para o segundo livro, mas eu vou falar dele outra hora. Para concluir a parte da história, quero dizer que esse livro é incrível e desafia os nossos instintos aventureiros.
 
-Com certeza você vai gostar desse livro se você gosta de fantasia, com humor leve e aventura. Como eu li em inglês, tive uma experiência diferente, mas eu acho que qualquer livro dessa coleção é bem divertido.
+Com certeza você vai gostar desse livro se você gosta de fantasia, com humor leve e aventura. E não precisa nem ter visto a série antes: o livro explica tudo direitinho, então ele funciona super bem como uma porta de entrada para esse mundo. Como eu li em inglês, tive uma experiência diferente, mas eu acho que qualquer livro dessa coleção é bem divertido.
 
 Um pouco mais sobre o MUNDO do livro:
 

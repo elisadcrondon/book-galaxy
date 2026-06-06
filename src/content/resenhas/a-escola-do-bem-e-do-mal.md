@@ -6,7 +6,7 @@ nota: 5
 favorita: true
 ---
 
-Eu amo livros de fantasia, e este é um dos meus favoritos de todos os tempos! *A Escola do Bem e do Mal* foi um daqueles livros que, assim que eu comecei, não consegui mais largar. Vou contar um pouquinho da minha experiência e da história para você.
+Eu amo livros de fantasia, e este é um dos meus favoritos de todos os tempos! *A Escola do Bem e do Mal* foi um daqueles livros que, assim que eu comecei, não consegui mais largar. Muita gente que leu fala a mesma coisa: começa achando que vai ser um conto de fadas comum e, de repente, percebe que o livro vira tudo do avesso. Vou contar um pouquinho da minha experiência e da história para você.
 
 Sobre a história:
 
@@ -16,6 +16,6 @@ Quando chega a vez das duas, acontece a maior surpresa de todas: a "princesa" So
 
 Minha opinião:
 
-O que eu mais gosto nesse livro é a mensagem que ele passa: a aparência não diz nada sobre quem a gente é por dentro. Uma pessoa bonita por fora pode ter um coração mau, e uma pessoa que parece "feia" pode ser a mais bondosa do mundo. 💖 Eu achei isso muito importante, e me fez pensar bastante enquanto lia. Também adorei a amizade da Sophie e da Agatha, que passa por muitas provações, mas mostra como amigas de verdade se importam uma com a outra.
+O que eu mais gosto nesse livro é a mensagem que ele passa: a aparência não diz nada sobre quem a gente é por dentro. Uma pessoa bonita por fora pode ter um coração mau, e uma pessoa que parece "feia" pode ser a mais bondosa do mundo. 💖 Eu achei isso muito importante, e me fez pensar bastante enquanto lia. Também adorei como os personagens vão se revelando aos poucos: você jura que sabe quem é bom e quem é mau, e o livro te prova que estava errada. As reviravoltas me pegaram várias vezes! E a amizade da Sophie e da Agatha passa por muitas provações, mostrando como amigas de verdade se importam uma com a outra.
 
-A coleção tem seis livros e ainda tem um livro extra chamado *A Origem da Escola do Bem e do Mal* (a minha dica é ler esse por último!). Eu recomendo demais para quem ama aventura, fantasia e amizade. Tenho certeza de que você vai amar do começo ao fim! Com carinho, Elisa.
+A coleção tem seis livros e ainda tem um livro extra chamado *A Origem da Escola do Bem e do Mal* (a minha dica é ler esse por último!). Eu recomendo demais para quem ama aventura, fantasia, amizade e quer um livro que faz a gente pensar enquanto se diverte. Tenho certeza de que você vai amar do começo ao fim! Com carinho, Elisa.

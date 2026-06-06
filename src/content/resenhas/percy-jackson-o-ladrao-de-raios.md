@@ -16,6 +16,6 @@ Para provar que é inocente, o Percy parte numa missão épica pelos Estados Uni
 
 Minha experiência:
 
-Uma coisa que eu acho linda nesse livro é que o Percy tem TDAH e dislexia e, mesmo assim, se torna um herói incrível. Isso mostra que aquilo que parece uma dificuldade pode virar uma força, e eu achei essa mensagem muito importante.
+Uma coisa que eu acho linda nesse livro é que o Percy tem TDAH e dislexia e, mesmo assim, se torna um herói incrível. Isso mostra que aquilo que parece uma dificuldade pode virar uma força, e eu achei essa mensagem muito importante. Outra coisa que faz esse livro ser tão querido é o trio: o Percy corajoso, a Annabeth super inteligente e o Grover engraçado se completam, e a amizade deles é o meu pedaço favorito da história.
 
-Eu também adoro que, enquanto a gente se diverte com a história, ainda aprende um montão sobre a mitologia grega quase sem perceber. Eu recomendo para quem gosta de aventura, amizade e reviravoltas. Tenho certeza de que você vai querer ler todos os livros da coleção! Com carinho, Elisa.
+Eu também adoro que o autor pega a mitologia grega e coloca no mundo de hoje, então a gente se diverte com a aventura e ainda aprende um montão sobre os deuses e os monstros quase sem perceber. A leitura é leve e rápida, daquelas que deixam um calorzinho no peito. Eu recomendo para quem gosta de aventura, amizade e reviravoltas. Tenho certeza de que você vai querer ler todos os livros da coleção! Com carinho, Elisa.

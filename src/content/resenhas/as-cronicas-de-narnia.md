@@ -6,7 +6,7 @@ nota: 4.5
 favorita: false
 ---
 
-Esse livro é um clássico que nunca envelhece! Eu li *As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa* e me senti dentro daquele mundo mágico. Vou contar um pouco da história e da minha experiência.
+Esse livro é um clássico que nunca envelhece! Eu li *As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa* e me senti dentro daquele mundo mágico. É um livro que muita gente lê quando criança e relê quando cresce, sempre achando algum detalhe novo. Vou contar um pouco da história e da minha experiência.
 
 Sobre a história:
 
@@ -16,6 +16,6 @@ Nárnia vive um inverno que nunca acaba, por culpa da temida Feiticeira Branca. 
 
 Minha experiência:
 
-Eu achei essa aventura muito divertida e cheia de coragem. Gostei bastante de ver como os quatro irmãos foram mudando ao longo da história, principalmente o Edmundo. Como é um livro mais antigo, o jeito de escrever é um pouquinho diferente do que eu estou acostumada, mas isso não atrapalhou nada a minha leitura.
+Eu achei essa aventura muito divertida e cheia de coragem. O que mais me marcou foi ver como os quatro irmãos vão mudando ao longo da história, principalmente o Edmundo, que faz escolhas difíceis e ainda tem chance de se transformar. O livro fala de esperança, de perdão e de fazer a coisa certa mesmo quando é difícil, e eu achei isso lindo. Aquela ideia de um guarda-roupa comum esconder um mundo inteiro é uma das coisas mais geniais que eu já li. Como é um livro mais antigo, o jeito de escrever é um pouquinho diferente do que eu estou acostumada, mas isso não atrapalhou nada a minha leitura.
 
-Eu recomendo para crianças corajosas que adoram entrar em mundos mágicos e viver grandes aventuras. Tenho certeza de que você vai amar conhecer Nárnia! 🦁 Com carinho, Elisa.
+Eu recomendo para crianças corajosas que adoram entrar em mundos mágicos e viver grandes aventuras, e também para quem quer começar a conhecer os clássicos da fantasia. Tenho certeza de que você vai amar conhecer Nárnia! 🦁 Com carinho, Elisa.

@@ -16,6 +16,6 @@ O mais legal de tudo é que dá para tentar descobrir quem é o culpado antes do
 
 Minha experiência:
 
-Esse livro mostra os vários lados de uma amizade e ainda ensina alguns truques de mágica de verdade, o que eu achei muito divertido. É uma leitura rápida e cheia de emoção: eu li em menos de uma semana, e todas as pessoas que eu conheço que leram deram a nota máxima.
+Esse livro mostra os vários lados de uma amizade e ainda ensina alguns truques de mágica de verdade, o que eu achei muito divertido. A escrita é leve e fácil de ler, então a história corre rápido e não dá vontade de parar: eu li em menos de uma semana, e todas as pessoas que eu conheço que leram deram a nota máxima. No finalzinho ainda tem uns extras bem legais, como uma entrevista com o autor e até truques explicados, e eu adorei essa parte.
 
-Outra coisa que me deixou muito feliz é que o Raphael Montes é um escritor brasileiro. Eu adoro saber que um mistério tão bom assim foi escrito aqui no Brasil, e isso me dá ainda mais vontade de ler outros livros de autores brasileiros. Eu recomendo demais, você não vai conseguir parar de ler! 💛 Com carinho, Elisa.
+Outra coisa que me deixou muito feliz é que o Raphael Montes é um escritor brasileiro. Eu adoro saber que um mistério tão bom assim foi escrito aqui no Brasil, e isso me dá ainda mais vontade de ler outros livros de autores brasileiros. Eu recomendo demais para quem gosta de mistério, suspense e investigação. Você não vai conseguir parar de ler! 💛 Com carinho, Elisa.

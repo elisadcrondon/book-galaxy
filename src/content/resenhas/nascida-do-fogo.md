@@ -6,7 +6,7 @@ nota: 4.5
 favorita: false
 ---
 
-Esse livro me prendeu do começo ao fim! *Nascida do Fogo* é cheio de fantasia, ação e reviravoltas, e eu vou contar um pouco da história e da minha experiência.
+Esse livro me prendeu do começo ao fim! *Nascida do Fogo* é uma história de alta fantasia cheia de ação e reviravoltas, e eu vou contar um pouco da história e da minha experiência.
 
 Sobre a história:
 
@@ -16,6 +16,6 @@ Quando a única amiga dela é capturada, a Doze e alguns colegas partem numa mis
 
 Minha experiência:
 
-Eu gostei muito da Doze, porque ela é forte e corajosa mesmo passando por coisas difíceis. Fiquei o tempo todo torcendo por ela e tentando adivinhar em quem ela podia confiar. As reviravoltas me surpreenderam várias vezes, e isso deixou a leitura ainda mais emocionante.
+Eu gostei muito da Doze, porque ela é forte e corajosa mesmo passando por coisas difíceis. A escrita é envolvente e cheia de detalhes, então eu sentia que estava mesmo dentro daquele mundo gelado, e o livro ainda tem umas ilustrações lindas que ajudam a imaginar tudo. Fiquei o tempo todo torcendo por ela e tentando adivinhar em quem ela podia confiar. As reviravoltas me surpreenderam várias vezes, e isso deixou a leitura ainda mais emocionante.
 
-Por enquanto a coleção tem dois livros, e eu já estou doida para ler a continuação. Se você gosta de fantasia, ação e reviravoltas, com certeza vai amar este livro. Eu gostei muito! 🔥 Com carinho, Elisa.
+Por enquanto a coleção tem dois livros, e eu já estou doida para ler a continuação. Se você gosta de fantasia, ação, aventura e personagens corajosas, com certeza vai amar este livro. Eu gostei muito! 🔥 Com carinho, Elisa.
