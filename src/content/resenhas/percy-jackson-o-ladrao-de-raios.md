@@ -10,7 +10,7 @@ Esse é um dos meus livros favoritos! Quando eu comecei a ler, não consegui mai
 
 Sobre a história:
 
-É a história de um menino chamado Percy, que acha que é um garoto totalmente normal, mas descobre que é muito importante para o futuro dos deuses gregos. ⚡ Ele descobre que é um semideus, filho de Poseidon, e logo é acusado de roubar o Raio Mestre de Zeus, uma arma poderosíssima.
+É a história de um menino chamado Percy, que acha que é um garoto totalmente normal, mas descobre que é muito importante para o futuro dos deuses gregos. Ele descobre que é um semideus, filho de Poseidon, e logo é acusado de roubar o Raio Mestre de Zeus, uma arma poderosíssima.
 
 Para provar que é inocente, o Percy parte numa missão épica pelos Estados Unidos, junto com os amigos dele, o Grover e a Annabeth. No caminho, eles enfrentam vários monstros da mitologia grega, e cada novo perigo deixa a aventura mais emocionante.
 

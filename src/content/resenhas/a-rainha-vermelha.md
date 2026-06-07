@@ -18,4 +18,4 @@ Minha experiência:
 
 Eu adorei a Mare, porque ela é corajosa mesmo tendo muito medo, e isso me fez torcer por ela o tempo todo. Teve momentos em que eu fiquei com o coração acelerado, sem saber em quem ela podia confiar, e o livro brinca com isso o tempo inteiro. A parte que mais comentam por aí, e que eu também achei demais, é o final: é uma reviravolta que ninguém vê chegando. O mundo do livro é muito bem explicado, e eu conseguia imaginar tudo direitinho na minha cabeça.
 
-É um livro um pouquinho maior e mais "grande", então acho perfeito para quem já gosta de fantasia com ação, intriga de palácio e muitas reviravoltas. Prepare-se, porque depois de começar fica bem difícil parar de ler! 👑 Com carinho, Elisa.
+É um livro um pouquinho maior e mais "grande", então acho perfeito para quem já gosta de fantasia com ação, intriga de palácio e muitas reviravoltas. Prepare-se, porque depois de começar fica bem difícil parar de ler! Com carinho, Elisa.

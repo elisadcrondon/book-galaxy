@@ -12,7 +12,7 @@ Sobre a história:
 
 A história fala sobre uma antiga profecia que precisa se realizar para acabar com uma guerra muito longa entre os dragões. Cinco dragõezinhos foram criados em segredo, escondidos do mundo, justamente para cumprir essa profecia e trazer a paz de volta. Entre eles está o Lamur, um dragão asa-da-lama, que é um dos meus preferidos.
 
-Só que, como em todo bom livro, as reviravoltas chegam mais rápido do que qualquer personagem consegue imaginar! Os cinco dragõezinhos vivem aventuras e mistérios de tirar o fôlego, e a cada capítulo eu queria saber o que ia acontecer em seguida. 🐉
+Só que, como em todo bom livro, as reviravoltas chegam mais rápido do que qualquer personagem consegue imaginar! Os cinco dragõezinhos vivem aventuras e mistérios de tirar o fôlego, e a cada capítulo eu queria saber o que ia acontecer em seguida.
 
 Minha experiência:
 

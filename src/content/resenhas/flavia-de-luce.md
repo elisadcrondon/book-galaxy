@@ -18,4 +18,4 @@ Minha experiência:
 
 Eu acho a Flávia muito divertida, porque ela é esperta, teimosa e corajosa ao mesmo tempo. É uma leitura um pouquinho mais difícil, porque se passa numa época bem antiga e tem um jeito de falar diferente, mas vale muito a pena. É um mistério inteligente, cheio de pistinhas, que faz você se sentir dentro da história tentando juntar tudo junto com ela. Uma curiosidade legal é que esse livro ganhou um prêmio importante de histórias policiais antes mesmo de ser publicado, e dá para entender o porquê.
 
-A minha dica é: quando chegar no meio do livro, tente adivinhar quem é o culpado antes da Flávia descobrir. Eu recomendo para quem gosta de mistério, investigação e personagens espertos e cheios de personalidade. Eu amei ler, e aposto que você também vai amar! 🔎 Com carinho, Elisa.
+A minha dica é: quando chegar no meio do livro, tente adivinhar quem é o culpado antes da Flávia descobrir. Eu recomendo para quem gosta de mistério, investigação e personagens espertos e cheios de personalidade. Eu amei ler, e aposto que você também vai amar! Com carinho, Elisa.

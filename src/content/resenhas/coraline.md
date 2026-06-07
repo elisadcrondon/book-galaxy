@@ -18,4 +18,4 @@ A história se passa numa casa enorme dividida em andares, onde cada andar tem u
 
 Um dia, explorando a casa, ela encontra uma porta trancada. E o que tem do outro lado dessa porta é cheio de suspense e surpresas que você nunca imaginaria! Tem partes que dão um arrepio gostoso, daqueles que fazem a gente querer continuar lendo mesmo com um pouquinho de medo. No fim, é uma história que também fala sobre dar valor à própria família e à própria casa, mesmo com os defeitos.
 
-Eu recomendo para quem gosta de mistério com um toquezinho de arrepio e uma protagonista corajosa. E, se você só viu o filme, vale muito a pena ler o livro para conhecer essa história ainda melhor! 🚪 Com carinho, Elisa.
+Eu recomendo para quem gosta de mistério com um toquezinho de arrepio e uma protagonista corajosa. E, se você só viu o filme, vale muito a pena ler o livro para conhecer essa história ainda melhor! Com carinho, Elisa.

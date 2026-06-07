@@ -18,4 +18,4 @@ Minha experiência:
 
 Eu achei essa aventura muito divertida e cheia de coragem. O que mais me marcou foi ver como os quatro irmãos vão mudando ao longo da história, principalmente o Edmundo, que faz escolhas difíceis e ainda tem chance de se transformar. O livro fala de esperança, de perdão e de fazer a coisa certa mesmo quando é difícil, e eu achei isso lindo. Aquela ideia de um guarda-roupa comum esconder um mundo inteiro é uma das coisas mais geniais que eu já li. Como é um livro mais antigo, o jeito de escrever é um pouquinho diferente do que eu estou acostumada, mas isso não atrapalhou nada a minha leitura.
 
-Eu recomendo para crianças corajosas que adoram entrar em mundos mágicos e viver grandes aventuras, e também para quem quer começar a conhecer os clássicos da fantasia. Tenho certeza de que você vai amar conhecer Nárnia! 🦁 Com carinho, Elisa.
+Eu recomendo para crianças corajosas que adoram entrar em mundos mágicos e viver grandes aventuras, e também para quem quer começar a conhecer os clássicos da fantasia. Tenho certeza de que você vai amar conhecer Nárnia! Com carinho, Elisa.

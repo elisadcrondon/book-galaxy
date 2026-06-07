@@ -6,7 +6,7 @@ nota: 5
 favorita: true
 ---
 
-Você já parou para imaginar como seria se um gato fosse mandado para o espaço? Pois é exatamente sobre isso que fala *O Primeiro Gato no Espaço*! É uma coleção super criativa e cheia de imaginação, e eu vou contar um pouco sobre ela. 🚀
+Você já parou para imaginar como seria se um gato fosse mandado para o espaço? Pois é exatamente sobre isso que fala *O Primeiro Gato no Espaço*! É uma coleção super criativa e cheia de imaginação, e eu vou contar um pouco sobre ela.
 
 Sobre a história:
 
