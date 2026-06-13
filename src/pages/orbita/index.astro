@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import siteConfig from "../../site.config";
-import FormattedDate from "../../components/FormattedDate.astro";
-import { excerptFromMarkdown, sortOrbitaDesc, withBase } from "../../utils/helpers";
+import OrbitaCard from "../../components/OrbitaCard.astro";
+import { sortOrbitaDesc } from "../../utils/helpers";
 
 const isProd = import.meta.env.PROD;
 const notas = (
@@ -22,33 +22,7 @@ const notas = (
         <p class="font-light text-center">Nenhuma anotação publicada ainda.</p>
       ) : (
         <div class="flex flex-col gap-6">
-          {notas.map((nota) => {
-            const href = withBase("/orbita/" + nota.id);
-            const trecho = excerptFromMarkdown(nota.body);
-            return (
-              <article class="rounded-2xl p-6 shadow-md bg-gradient-to-br from-space-red/10 to-space-yellow/10">
-                <a href={href} class="group block">
-                  <h2 class="kanit-bold text-2xl group-hover:underline">
-                    {nota.data.titulo}
-                  </h2>
-                </a>
-                <div class="mt-1.5 mb-3 opacity-70">
-                  <FormattedDate date={new Date(nota.data.pubDate)} />
-                </div>
-                {trecho && (
-                  <p class="font-light leading-relaxed whitespace-pre-line">
-                    {trecho}
-                  </p>
-                )}
-                <a
-                  href={href}
-                  class="inline-block mt-4 kanit-bold text-space-red dark:text-space-yellow hover:underline"
-                >
-                  Leia tudo →
-                </a>
-              </article>
-            );
-          })}
+          {notas.map((nota) => <OrbitaCard nota={nota} />)}
         </div>
       )
     }

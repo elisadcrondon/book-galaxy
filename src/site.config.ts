@@ -72,8 +72,8 @@ const siteConfig: SiteConfig = {
     title: 'Book Galaxy',
     description: 'Book Galaxy: o cantinho de livros da Elisa — resenhas, autores favoritos e coleções, com muito carinho. 📚',
     image: {
-        src: '/space-ahead-preview.jpeg',
-        alt: 'Book Galaxy — o blog de resenhas de livros da Elisa.'
+        src: '/book-galaxy-preview.jpeg',
+        alt: 'Book Galaxy — resenhas de livros da Elisa.'
     },
     headerNavLinks: [
         {
@@ -151,8 +151,8 @@ const siteConfig: SiteConfig = {
                 href: withBase('/resenhas')
             },
             {
-                text: 'Ver livros',
-                href: withBase('/livros')
+                text: 'Minha Órbita',
+                href: withBase('/orbita')
             }
         ]
     },

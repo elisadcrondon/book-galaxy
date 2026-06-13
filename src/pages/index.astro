@@ -2,14 +2,18 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
-import { sortResenhasByDateDesc, withBase } from "../utils/helpers";
+import { sortResenhasByDateDesc, sortOrbitaDesc, withBase } from "../utils/helpers";
 import ResenhaCard from "../components/ResenhaCard.astro";
+import OrbitaCard from "../components/OrbitaCard.astro";
 import Button from "../components/Button.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 
 const isProd = import.meta.env.PROD;
 const resenhas = (await getCollection("resenhas", ({ data }) => !(isProd && data.draft)))
   .sort(sortResenhasByDateDesc);
+
+const orbita = (await getCollection("orbita", ({ data }) => !(isProd && data.draft)))
+  .sort(sortOrbitaDesc);
 
 const totalLivros = (await getCollection("livros")).length;
 const totalAutores = (await getCollection("autores")).length;
@@ -47,7 +51,9 @@ const totalColecoes = (await getCollection("colecoes")).length;
         }
       </div>
       <p class="kanit-light text-xs mt-2">
-        📚 {totalLivros} livros · ✍️ {totalAutores} autores · 📦 {totalColecoes} coleções
+        📚 {totalLivros} livros · ✍️ {totalAutores} autores · 📦 {totalColecoes} coleções{
+          orbita.length > 0 && <> · 🪐 {orbita.length} textos na Órbita</>
+        }
       </p>
     </div>
     <div class="w-full sm:w-fit sm:max-w-1/2 flex justify-center">
@@ -84,5 +90,27 @@ const totalColecoes = (await getCollection("colecoes")).length;
         Ver todas as resenhas <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
+
+    {
+      orbita.length > 0 && (
+        <div
+          id="orbita"
+          class="flex flex-col items-center justify-center w-full mt-20"
+        >
+          <h2 class="sigmar-ff text-balance pt-0! pb-2!">Da Órbita</h2>
+          <p class="kanit-regular text-balance text-center pb-8 max-w-xl">
+            Ideias, anotações e descobertas — tudo que orbita a minha vida. 🪐
+          </p>
+          <div class="flex flex-col gap-6 max-w-full text-left w-full">
+            {orbita.slice(0, 3).map((nota) => (
+              <OrbitaCard nota={nota} />
+            ))}
+          </div>
+          <Button href={withBase("/orbita")} class="space-btn-outlined mt-8">
+            Ver toda a Órbita <ArrowRight class="w-5 h-5 fill-current ml-4" />
+          </Button>
+        </div>
+      )
+    }
   </div>
 </MainLayout>
