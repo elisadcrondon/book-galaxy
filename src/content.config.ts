@@ -130,6 +130,23 @@ const videos = defineCollection({
     }),
 });
 
+// ---------------------------------------------------------------------------
+// ÓRBITA — anotações livres da Elisa: ideias, descobertas, amigas... tudo que
+// orbita a vida dela e não é uma resenha de livro. Cada nota é independente,
+// sem cruzamento de informações com as outras coleções. O texto fica no corpo
+// do markdown.
+// ---------------------------------------------------------------------------
+const orbita = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/orbita" }),
+    schema: z.object({
+        titulo: z.string(),
+        pubDate: z.date(),
+        // descrição curta opcional, mostrada na listagem
+        descricao: z.string().nullish(),
+        draft: z.boolean().optional(),
+    }),
+});
+
 export const collections = {
     resenhas,
     livros,
@@ -138,4 +155,5 @@ export const collections = {
     colecoes,
     mensais,
     videos,
+    orbita,
 };

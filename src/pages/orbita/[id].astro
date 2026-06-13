@@ -1,0 +1,53 @@
+---
+import "../../styles/global.css";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import { sortOrbitaDesc, withBase } from "../../utils/helpers";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import ArrowLeft from "../../icons/ArrowLeft.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import siteConfig from "../../site.config";
+
+export async function getStaticPaths() {
+  const isProd = import.meta.env.PROD;
+  const notas = (
+    await getCollection("orbita", ({ data }) => !(isProd && data.draft))
+  ).sort(sortOrbitaDesc);
+  return notas.map((nota) => ({
+    params: { id: nota.id },
+    props: { nota },
+  }));
+}
+
+type Props = { nota: CollectionEntry<"orbita"> };
+const { nota } = Astro.props;
+const { Content } = await render(nota);
+
+const descricao = (
+  nota.data.descricao || `${nota.data.titulo} — uma anotação da Elisa na Órbita do Book Galaxy.`
+).slice(0, 160);
+---
+
+<MainLayout
+  activePage="órbita"
+  pageTitle={siteConfig.title + " | " + nota.data.titulo}
+  description={descricao}
+  ogType="article"
+>
+  <div class="page-content py-8">
+    <h1 class="sigmar-ff text-center text-balance">{nota.data.titulo}</h1>
+    <div class="flex justify-center my-3 opacity-70">
+      <FormattedDate date={new Date(nota.data.pubDate)} />
+    </div>
+
+    <article class="font-light text-left mt-4">
+      <Content />
+    </article>
+
+    <div class="flex items-center justify-center my-8">
+      <Button class="back-link" href={withBase("/orbita")}>
+        <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Voltar para a Órbita
+      </Button>
+    </div>
+  </div>
+</MainLayout>

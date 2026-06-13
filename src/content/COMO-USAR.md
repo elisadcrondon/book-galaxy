@@ -8,6 +8,7 @@ Bem-vinda! Aqui você escreve suas resenhas de livros. Cada coisa fica numa past
 - **estilos/** → o tipo do livro (fantasia, aventura, fábula...)
 - **colecoes/** → séries com vários livros (Harry Potter, Nárnia...)
 - **videos/** → entrevistas e outros vídeos do YouTube
+- **orbita/** → anotações livres (ideias, descobertas, amigas...), fora das resenhas
 
 Tudo é em **Markdown** e pode ser editado aqui no Obsidian. 💛
 
@@ -108,6 +109,30 @@ Texto opcional sobre o vídeo (quem é, sobre o que é...).
 - `descricao` e o texto embaixo são **opcionais**.
 - Quer uma capa diferente da do YouTube? Coloque a imagem em `public/videos/` e escreva `thumb: /videos/minha-capa.jpg`.
 - Modelo pronto em `_templates/Video.md`.
+
+---
+
+## Órbita (anotações livres)
+
+A **Órbita** é o seu espaço para escrever o que não é resenha: ideias, anotações,
+descobertas, coisas sobre as amigas... tudo que orbita a sua vida. Cada arquivo
+dentro de `orbita/` é uma anotação independente — não precisa ter ligação com as
+outras nem com os livros.
+
+```
+---
+titulo: Título da anotação
+pubDate: 2026-06-13
+descricao: Uma frase curtinha que aparece na listagem.
+draft: false
+---
+
+Escreva aqui o que quiser! Pode usar **negrito**, _itálico_, listas e emojis 💛.
+```
+
+- `descricao` é **opcional** (aparece só na listagem).
+- Para guardar sem publicar, use `draft: true`.
+- Modelo pronto em `_templates/Orbita.md`.
 
 ---
 

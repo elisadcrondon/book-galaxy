@@ -53,6 +53,39 @@ export function sortVideosDesc(
     return tb - ta;
 }
 
+// Ordena as anotações da Órbita da mais nova para a mais antiga
+export function sortOrbitaDesc(
+    a: CollectionEntry<'orbita'>,
+    b: CollectionEntry<'orbita'>
+) {
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+}
+
+// Gera um trecho (preview) a partir do corpo em Markdown de uma anotação.
+// Remove a sintaxe do Markdown e devolve os primeiros parágrafos, cortando
+// em ~maxLength caracteres sem partir palavras ao meio.
+export function excerptFromMarkdown(body: string = '', maxLength = 320): string {
+    const texto = body
+        // remove blocos de código
+        .replace(/```[\s\S]*?```/g, '')
+        // imagens
+        .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+        // links: mantém só o texto
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+        // títulos, citações e marcadores de lista no início da linha
+        .replace(/^\s{0,3}(#{1,6}|>|[-*+]|\d+\.)\s+/gm, '')
+        // ênfases (negrito/itálico) e código inline
+        .replace(/[*_`~]+/g, '')
+        .replace(/\r/g, '')
+        .trim();
+
+    if (texto.length <= maxLength) return texto;
+
+    const corte = texto.slice(0, maxLength);
+    const ultimoEspaco = corte.lastIndexOf(' ');
+    return (ultimoEspaco > 0 ? corte.slice(0, ultimoEspaco) : corte).trimEnd() + '…';
+}
+
 // Extrai o ID de um vídeo do YouTube a partir de um link ou do próprio ID.
 // Aceita formatos como youtu.be/ID, youtube.com/watch?v=ID, /embed/ID, /shorts/ID.
 export function youtubeId(input: string): string {

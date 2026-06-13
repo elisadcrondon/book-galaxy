@@ -93,8 +93,8 @@ const siteConfig: SiteConfig = {
             href: withBase('/mensais')
         },
         {
-            text: 'Vídeos',
-            href: withBase('/videos')
+            text: 'Órbita',
+            href: withBase('/orbita')
         }
     ],
     footerNavLinks: [
@@ -109,6 +109,10 @@ const siteConfig: SiteConfig = {
         {
             text: 'Coleções',
             href: withBase('/colecoes')
+        },
+        {
+            text: 'Vídeos',
+            href: withBase('/videos')
         },
         {
             text: 'RSS Feed',
