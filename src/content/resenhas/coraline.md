@@ -18,4 +18,9 @@ A história se passa numa casa enorme dividida em andares, onde cada andar tem u
 
 Um dia, explorando a casa, ela encontra uma porta trancada. E o que tem do outro lado dessa porta é cheio de suspense e surpresas que você nunca imaginaria! Tem partes que dão um arrepio gostoso, daqueles que fazem a gente querer continuar lendo mesmo com um pouquinho de medo. No fim, é uma história que também fala sobre dar valor à própria família e à própria casa, mesmo com os defeitos.
 
+Quando Coraline entrou nesse portal, ela se encontrou na mesma casa, porém com pais que têm tempo para ficar com ela, e um gato que consegue falar. Ao se deparar com essa situação, Coraline prefere essa "nova" casa.
+Coraline começa a frequentar mais essa casa, até que essa MÃE melhorada começa a se mostrar do MAL, querendo que Coraline costure um botão no olho.
+Ao encontrar almas perdidas, vizinhos diferentes e desafios com a mãe, ela começa um "CAÇA TESOURO" com a mãe, e, se a Coraline ganhasse, estaria livre.
+Agora é só ganhar, né?
+
 Eu recomendo para quem gosta de mistério com um toquezinho de arrepio e uma protagonista corajosa. E, se você só viu o filme, vale muito a pena ler o livro para conhecer essa história ainda melhor! Com carinho, Elisa.

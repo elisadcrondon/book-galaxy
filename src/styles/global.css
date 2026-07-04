@@ -85,6 +85,20 @@ p {
   @apply mb-6;
 }
 
+/* listas dentro de textos (resenhas, posts) — o reset do Tailwind
+   remove numeração e margens, então restauramos aqui */
+article ol {
+  @apply mb-6 list-decimal pl-6;
+}
+
+article ul {
+  @apply mb-6 list-disc pl-6;
+}
+
+article li {
+  @apply mb-1;
+}
+
 img {
   @apply h-auto max-w-full rounded-xl;
 }
