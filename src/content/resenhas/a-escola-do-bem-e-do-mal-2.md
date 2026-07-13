@@ -8,7 +8,7 @@ favorita: false
 
 Depois de amar o primeiro livro, eu fui correndo ler a continuação, e não me arrependi nem um pouquinho! Vou contar um pouco sobre o segundo livro da Escola do Bem e do Mal, sem estragar as surpresas.
 
-Sobre a história:
+**Sobre a história:**
 
 Tudo começa quando a Sophie e a Agatha voltam para casa, em Gavaldon, com o final feliz de serem amigas de novo. Mas a Agatha fica com um desejo guardado no coração e, sem querer, acaba reabrindo os portões da Escola do Bem e do Mal. Quando elas chegam lá, está tudo diferente!
 
@@ -36,7 +36,7 @@ Também existiam regras na Escola para Meninas:
 
 **Cronogramas das duas escolas no livro 1 (uma das minhas partes favoritas):**
 
-Escola do Mal - Sophie, de Além da Floresta:
+**Escola do Mal - Sophie, de Além da Floresta:**
 
 1. Enfeiamento, professor Bilious Manley
 2. Treinamento para Capangas, professor Cástor
@@ -46,7 +46,7 @@ Escola do Mal - Sophie, de Além da Floresta:
 6. Talentos Especiais, professora Sheeba Cheeks
 7. Sobrevivendo a Contos de Fadas, professor Yuba, o gnomo
 
-Escola do Bem - Agatha, de Além da Floresta:
+**Escola do Bem - Agatha, de Além da Floresta:**
 
 1. Embelezamento, professora Emma Anêmona
 2. Etiqueta para Princesas, professor Pólux
@@ -64,7 +64,7 @@ Escola do Bem - Agatha, de Além da Floresta:
 
 Outros personagens importantes da escola: o Diretor da Escola (Rhian/Rafal), a professora Emma Anêmona, o Yuba e o professor Manley.
 
-Minha experiência:
+**Minha experiência:**
 
 Foi muito legal ver a amizade da Sophie e da Agatha sendo colocada à prova de novo, mas de um jeito diferente. Dessa vez a história fala bastante sobre o que acontece quando os meninos e as meninas param de se entender, e também sobre escolher entre a amizade e outras coisas que a gente quer. Eu achei isso bem interessante de acompanhar, porque me fez pensar no que eu faria no lugar delas. Teve partes que me deixaram nervosa e outras que me fizeram rir, e as reviravoltas continuam aparecendo quando a gente menos espera.
 
