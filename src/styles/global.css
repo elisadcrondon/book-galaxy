@@ -19,7 +19,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Kanit", "sans-serif";
+  --font-sans: "Literata", Georgia, serif;
   --color-space-red: var(--space-red);
   --color-space-yellow: var(--space-yellow);
   --color-space-sand: var(--space-sand);
@@ -74,7 +74,7 @@ footer {
 }
 
 h1 {
-  @apply py-4 text-2xl sm:py-6 sm:text-6xl;
+  @apply py-4 text-2xl sm:py-6 sm:text-5xl;
 }
 
 h2 {
@@ -145,6 +145,15 @@ html.dark a:not(.button-link):hover {
 
 .blinking {
   animation: cursor-blink 1.2s steps(2) infinite;
+}
+
+/* esconde a barra de rolagem do carrossel (o conteúdo continua rolável) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @media (orientation: portrait) {

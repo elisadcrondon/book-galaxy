@@ -1,0 +1,81 @@
+---
+// Card de destaque das últimas resenhas na página principal.
+// A capa é a protagonista: grande, levemente inclinada (endireita no hover).
+import { type CollectionEntry, getEntry, getEntries } from "astro:content";
+import { excerptFromMarkdown, withBase } from "../utils/helpers";
+import Capa from "./Capa.astro";
+import Nota from "./Nota.astro";
+import FormattedDate from "./FormattedDate.astro";
+
+type Props = {
+  resenha: CollectionEntry<"resenhas">;
+  // posição no destaque (0, 1, 2) — controla a inclinação da capa
+  posicao?: number;
+  // mostra a etiqueta "Nova!" (usada na resenha mais recente)
+  nova?: boolean;
+};
+
+const { resenha, posicao = 0, nova = false } = Astro.props;
+
+const livro = await getEntry(resenha.data.livro);
+const autoresEntries = livro ? await getEntries(livro.data.autores) : [];
+const autores = autoresEntries.map((a) => a.data.nome).join(", ");
+const titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
+const href = withBase("/resenhas/" + resenha.id);
+const trecho = excerptFromMarkdown(resenha.body, 110);
+
+const inclinacoes = ["-rotate-2", "rotate-2", "-rotate-1"];
+const inclinacao = inclinacoes[posicao % inclinacoes.length];
+---
+
+<a
+  href={href}
+  class="group flex flex-col items-center text-center"
+>
+  <div class="relative shrink-0 pt-3 pb-4">
+    <div
+      class:list={[
+        "transition-transform duration-300 group-hover:rotate-0 group-hover:scale-105",
+        inclinacao,
+      ]}
+    >
+      <Capa
+        capa={livro?.data.capa}
+        titulo={livro?.data.titulo || titulo}
+        width={150}
+        height={225}
+        class="shadow-lg"
+      />
+    </div>
+    {
+      nova && (
+        <span class="absolute top-1 -right-1 rotate-6 rounded-full bg-space-red px-2.5 py-0.5 text-xs kanit-bold text-whitesmoke shadow-md">
+          Nova!
+        </span>
+      )
+    }
+  </div>
+
+  <div class="flex flex-col items-center gap-1 min-w-0">
+    <h3 class="sigmar-ff text-lg leading-snug group-hover:text-space-red dark:group-hover:text-space-yellow transition-colors">
+      {titulo}
+    </h3>
+    {
+      livro && (
+        <p class="kanit-regular-italic text-xs mb-0 opacity-70">
+          {livro.data.titulo}
+          {autores && `, de ${autores}`}
+        </p>
+      )
+    }
+    <div class="flex justify-center items-center gap-3 text-xs">
+      <FormattedDate date={new Date(resenha.data.pubDate)} />
+      <Nota nota={resenha.data.nota} />
+    </div>
+    {
+      trecho && (
+        <p class="kanit-light text-sm leading-relaxed mt-1 mb-0">{trecho}</p>
+      )
+    }
+  </div>
+</a>

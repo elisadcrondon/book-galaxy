@@ -138,9 +138,9 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        eyebrowText: 'Um livro de cada vez 📖',
-        title: 'Book Galaxy ✨',
-        text: "Oi! Eu sou a Elisa e aqui eu escrevo o que achei dos livros que leio. Dá uma olhada nas minhas resenhas!",
+        eyebrowText: 'O diário de leitura da Elisa',
+        title: 'Book Galaxy',
+        text: "Oi! Eu sou a Elisa e este é o meu diário de leitura: resenhas dos livros que leio e anotações de tudo que orbita a minha vida.",
         image: {
             src: '/assets/images/pixeltrue-space-discovery.svg',
             alt: 'Ilustração de leitura'

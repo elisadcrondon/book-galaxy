@@ -1,0 +1,87 @@
+---
+// Uma entrada do diário na página principal. Aceita uma resenha ou uma
+// nota da Órbita e mostra tudo no mesmo estilo: data, tipo, título,
+// trecho e (no caso de resenha) a capa do livro.
+import { type CollectionEntry, getEntry, getEntries } from "astro:content";
+import { excerptFromMarkdown, withBase } from "../utils/helpers";
+import Capa from "./Capa.astro";
+import Nota from "./Nota.astro";
+import FormattedDate from "./FormattedDate.astro";
+
+type Props =
+  | { tipo: "resenha"; entrada: CollectionEntry<"resenhas"> }
+  | { tipo: "orbita"; entrada: CollectionEntry<"orbita"> };
+
+const { tipo, entrada } = Astro.props as Props;
+
+let href = "";
+let titulo = "";
+let trecho = "";
+let livro = null;
+let autores = "";
+let notaResenha: number | undefined = undefined;
+
+if (tipo === "resenha") {
+  const resenha = entrada as CollectionEntry<"resenhas">;
+  livro = await getEntry(resenha.data.livro);
+  const autoresEntries = livro ? await getEntries(livro.data.autores) : [];
+  autores = autoresEntries.map((a) => a.data.nome).join(", ");
+  titulo = resenha.data.titulo || livro?.data.titulo || "Resenha";
+  href = withBase("/resenhas/" + resenha.id);
+  trecho = excerptFromMarkdown(resenha.body, 450);
+  notaResenha = resenha.data.nota;
+} else {
+  const nota = entrada as CollectionEntry<"orbita">;
+  titulo = nota.data.titulo;
+  href = withBase("/orbita/" + nota.id);
+  trecho = nota.data.descricao || excerptFromMarkdown(nota.body, 450);
+}
+
+const rotulo = tipo === "resenha" ? "Resenha" : "Órbita";
+---
+
+<article class="w-full py-4 first:pt-2">
+  <a href={href} class="group flex gap-4 items-start">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-baseline gap-2 text-xs tracking-widest uppercase opacity-60">
+        <FormattedDate date={new Date(entrada.data.pubDate)} />
+        <span aria-hidden="true">·</span>
+        <span>{rotulo}</span>
+        {
+          notaResenha !== undefined && (
+            <Nota nota={notaResenha} class="normal-case tracking-normal" />
+          )
+        }
+      </div>
+      <h3 class="sigmar-ff text-base sm:text-lg leading-snug mt-1 group-hover:text-space-red dark:group-hover:text-space-yellow transition-colors">
+        {titulo}
+      </h3>
+      {
+        tipo === "resenha" && livro && (
+          <p class="kanit-regular-italic text-xs mt-0.5 mb-0 opacity-70">
+            {livro.data.titulo}{autores && `, de ${autores}`}
+          </p>
+        )
+      }
+      {
+        trecho && (
+          <p class="kanit-light leading-snug mt-1.5 mb-0 text-sm line-clamp-6">
+            {trecho}
+          </p>
+        )
+      }
+    </div>
+    {
+      tipo === "resenha" && (
+        <div class="shrink-0 transition-transform duration-300 group-hover:scale-105">
+          <Capa
+            capa={livro?.data.capa}
+            titulo={livro?.data.titulo || titulo}
+            width={56}
+            height={84}
+          />
+        </div>
+      )
+    }
+  </a>
+</article>

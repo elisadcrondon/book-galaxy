@@ -8,7 +8,7 @@ estilos:
 colecao: homem-cao
 ordemNaColecao: 1
 anoPublicacao: 2016
-capa: "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tx7h9Voh0pCpKKuHyl3o7KkZy9uOVyGpWfCKT-JuR07nOOqawZmnYcvChKPkp21cAKxnvwA898L2h2HLLG_4M7PsEbcTRvwe6CXS35AlOhhOHEu_Bk0A"
+capa: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1515897240i/37930335.jpg"
 idioma: pt
 sinopse: "Depois de um acidente, a cabeça de um cão é unida ao corpo de um policial, criando o herói Homem-Cão."
 ---
